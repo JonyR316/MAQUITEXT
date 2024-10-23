@@ -9,11 +9,31 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div id="page" class="site">
+      <aside class="site-off desktop-hide">
+        <div class="off-canvas">
+          <div class="canvas-head flexitem">
+            <div class="logo">
+              <a href="/"><span class="circle"></span>.MAQUITEXT</a>
+            </div>
+            <a href="#" class="t-close flexcenter"
+              ><i class="ri-close-line"></i
+            ></a>
+          </div>
+          <div class="departments"></div>
+          <nav></nav>
+          <div class="thetop-nav"></div>
+        </div>
+      </aside>
+
       <header>
-        <div class="header-top">
+        <div class="header-top mobile-hide">
           <div class="container">
             <div class="wrapper flexitem">
               <div class="left">
@@ -70,27 +90,266 @@
                   <ul class="flexitem second-links">
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">TIENDA</a></li>
-                    <li>
+                    <li class="has-child">
                       <a href="#"
                         >MAQUINAS
                         <div class="icon-small">
                           <i class="ri-arrow-down-s-line"></i>
                         </div>
                       </a>
+                      <div class="mega">
+                        <div class="container">
+                          <div class="wrapper">
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>DOMESTICAS</h4>
+                                <ul>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>INDUSTRIALES</h4>
+                                <ul>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>CORTADORAS</h4>
+                                <ul>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>MARCAS</h4>
+                                <ul class="maquinas-brands">
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                </ul>
+                                <a href="#" class="view-all"
+                                  ><b
+                                    >TODAS LAS MARCAS
+                                    <i class="ri-arrow-right-line"></i></b
+                                ></a>
+                              </div>
+                            </div>
+                            <div class="flexcol products">
+                              <row>
+                                <div class="media">
+                                  <div class="thumbnail object-cover">
+                                    <a href="#">
+                                      <img
+                                        src="assets/img/maquinasportadas.png"
+                                        alt=""
+                                      />
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="text-content">
+                                  <h4>LO MAS BUSCADO!</h4>
+                                  <a href="#" class="primary-button"
+                                    >ORDENA AHORA</a
+                                  >
+                                </div>
+                              </row>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </li>
-                    <li>
+                    <li class="has-child">
                       <a href="#"
                         >REPUESTOS
                         <div class="icon-small">
                           <i class="ri-arrow-down-s-line"></i>
                         </div>
                       </a>
+                      <div class="mega">
+                        <div class="container">
+                          <div class="wrapper">
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>DOMESTICAS</h4>
+                                <ul>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>INDUSTRIALES</h4>
+                                <ul>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>CORTADORAS</h4>
+                                <ul>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>MARCAS</h4>
+                                <ul class="maquinas-brands">
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                </ul>
+                                <a href="#" class="view-all"
+                                  ><b
+                                    >TODAS LAS MARCAS
+                                    <i class="ri-arrow-right-line"></i></b
+                                ></a>
+                              </div>
+                            </div>
+                            <div class="flexcol products">
+                              <row>
+                                <div class="media">
+                                  <div class="thumbnail object-cover">
+                                    <a href="#">
+                                      <img
+                                        src="assets/img/maquinasportadas.png"
+                                        alt=""
+                                      />
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="text-content">
+                                  <h4>LO MAS BUSCADO!</h4>
+                                  <a href="#" class="primary-button"
+                                    >ORDENA AHORA</a
+                                  >
+                                </div>
+                              </row>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </li>
-                    <li>
+                    <li class="has-child">
                       <a href="#"
-                        >ACCSESORIOS
-                        <div class="fly-item"><span>Nuevos!</span></div>
+                        >ACCESORIOS
+                        <div class="icon-small">
+                          <i class="ri-arrow-down-s-line"></i>
+                        </div>
                       </a>
+                      <div class="mega">
+                        <div class="container">
+                          <div class="wrapper">
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>DOMESTICAS</h4>
+                                <ul>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                  <li><a href="">domesticas</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>INDUSTRIALES</h4>
+                                <ul>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                  <li><a href="">industriales</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>CORTADORAS</h4>
+                                <ul>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                  <li><a href="">cortadoras</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>MARCAS</h4>
+                                <ul class="maquinas-brands">
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                  <li><a href="">marcas</a></li>
+                                </ul>
+                                <a href="#" class="view-all"
+                                  ><b
+                                    >TODAS LAS MARCAS
+                                    <i class="ri-arrow-right-line"></i></b
+                                ></a>
+                              </div>
+                            </div>
+                            <div class="flexcol products">
+                              <row>
+                                <div class="media">
+                                  <div class="thumbnail object-cover">
+                                    <a href="#">
+                                      <img
+                                        src="assets/img/maquinasportadas.png"
+                                        alt=""
+                                      />
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="text-content">
+                                  <h4>LO MAS BUSCADO!</h4>
+                                  <a href="#" class="primary-button"
+                                    >ORDENA AHORA</a
+                                  >
+                                </div>
+                              </row>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </li>
                   </ul>
                 </nav>
@@ -126,12 +385,1206 @@
             </div>
           </div>
         </div>
+        <!-- header-nav-->
+        <div class="header-main mobile-hide">
+          <div class="container">
+            <div class="wrapper flexitem">
+              <div class="left">
+                <div class="dpt-cat">
+                  <div class="dpt-head">
+                    <div class="main-text">TODOS LOS DEPARTAMENTOS</div>
+                    <div class="mini-text mobile-hide">
+                      TOTAL 1369 PRODUCTOS
+                    </div>
+                    <a href="#" class="dpt-trigger mobile-hide">
+                      <i class="ri-menu-3-line ri-xl"></i>
+                    </a>
+                  </div>
+                  <div class="dpt-menu">
+                    <ul class="second-links">
+                      <li class="has-child maquinas">
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          MAQUINAS
+                          <div class="icon-small">
+                            <i class="ri-arrow-right-s-line"></i>
+                          </div>
+                        </a>
+                        <ul>
+                          <li><a href="#">maquinas1</a></li>
+                          <li><a href="#">maquinas2</a></li>
+                          <li><a href="#">maquinas3</a></li>
+                          <li><a href="#">maquinas4</a></li>
+                          <li><a href="#">maquinas5</a></li>
+                          <li><a href="#">maquinas6</a></li>
+                        </ul>
+                      </li>
+                      <li class="has-child repuestos">
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          REPUESTOS
+                          <div class="icon-small">
+                            <i class="ri-arrow-right-s-line"></i>
+                          </div>
+                        </a>
+                        <ul>
+                          <li><a href="#">repuestos1</a></li>
+                          <li><a href="#">repuestos2</a></li>
+                          <li><a href="#">repuestos3</a></li>
+                          <li><a href="#">repuestos4</a></li>
+                          <li><a href="#">repuestos5</a></li>
+                          <li><a href="#">repuestos6</a></li>
+                        </ul>
+                      </li>
+                      <li class="has-child accesorios">
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          ACCESORIOS
+                          <div class="icon-small">
+                            <i class="ri-arrow-right-s-line"></i>
+                          </div>
+                        </a>
+                        <ul>
+                          <li><a href="#">accesorios1</a></li>
+                          <li><a href="#">accesorios2</a></li>
+                          <li><a href="#">accesorios3</a></li>
+                          <li><a href="#">accesorios4</a></li>
+                          <li><a href="#">accesorios5</a></li>
+                          <li><a href="#">accesorios6</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          ACCESORIOS 1
+                          <div class="icon-small"></div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          ACCESORIOS 2
+                          <div class="icon-small"></div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          ACCESORIOS 3
+                          <div class="icon-small"></div>
+                        </a>
+                      </li>
+                      <li class="has-child otros">
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          OTROS
+                          <div class="icon-small">
+                            <i class="ri-arrow-right-s-line"></i>
+                          </div>
+                        </a>
+                        <div class="mega">
+                          <div class="flexcol">
+                            <div class="row">
+                              <h4><a href="#">SUB OTROS 1</a></h4>
+                              <ul>
+                                <li><a href="#">SUB 1</a></li>
+                                <li><a href="#">SUB 2</a></li>
+                                <li><a href="#">SUB 3</a></li>
+                                <li><a href="#">SUB 4</a></li>
+                                <li><a href="#">SUB 5</a></li>
+                              </ul>
+                            </div>
+                            <div class="row">
+                              <h4><a href="#">SUB OTROS 2</a></h4>
+                              <ul>
+                                <li><a href="#">SUB 1</a></li>
+                                <li><a href="#">SUB 2</a></li>
+                                <li><a href="#">SUB 3</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="flexcol">
+                            <div class="row">
+                              <h4><a href="#">SUB OTROS 3</a></h4>
+                              <ul>
+                                <li><a href="#">SUB 1</a></li>
+                                <li><a href="#">SUB 2</a></li>
+                                <li><a href="#">SUB 3</a></li>
+                                <li><a href="#">SUB 4</a></li>
+                                <li><a href="#">SUB 5</a></li>
+                              </ul>
+                            </div>
+                            <div class="row">
+                              <h4><a href="#">SUB OTROS 4</a></h4>
+                              <ul>
+                                <li><a href="#">SUB 1</a></li>
+                                <li><a href="#">SUB 2</a></li>
+                                <li><a href="#">SUB 3</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="icon-large">
+                            <i class="ri-checkbox-multiple-fill"></i>
+                          </div>
+                          OTROS 1
+                          <div class="icon-small"></div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="search-box">
+                  <form action="" class="search">
+                    <span class="icon-large"
+                      ><i class="ri-search-line"></i
+                    ></span>
+                    <input type="search" placeholder="NOMBRE PRODUCTO" />
+                    <button type="submit">BUSCAR</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--header-main-->
       </header>
 
-      <main></main>
+      <main>
+        <div class="slider">
+          <div class="container">
+            <div class="wrapper">
+              <div class="myslider swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="item">
+                      <div class="image object-cover">
+                        <img src="assets/img/slider/slider1.jpeg" alt="" />
+                      </div>
+                      <div class="text-content flexcol">
+                        <h4>MAQUINAS</h4>
+                        <h2>
+                          <span>MAQUINAS DE TODAS LAS MARCAS!</span><br /><span
+                            >VEN Y ADQUIERELO</span
+                          >
+                        </h2>
+                        <a href="#" class="primary-button">COMPRAR AHORA</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="item">
+                      <div class="image object-cover">
+                        <img src="assets/img/slider/slider2.jpeg" alt="" />
+                      </div>
+                      <div class="text-content flexcol">
+                        <h4>MAQUINAS</h4>
+                        <h2>
+                          <span>MAQUINAS DE TODAS LAS MARCAS!</span><br /><span
+                            >VEN Y ADQUIERELO</span
+                          >
+                        </h2>
+                        <a href="#" class="primary-button">COMPRAR AHORA</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="item">
+                      <div class="image object-cover">
+                        <img src="assets/img/slider/slider3.jpeg" alt="" />
+                      </div>
+                      <div class="text-content flexcol">
+                        <h4>MAQUINAS</h4>
+                        <h2>
+                          <span>MAQUINAS DE TODAS LAS MARCAS!</span><br /><span
+                            >VEN Y ADQUIERELO</span
+                          >
+                        </h2>
+                        <a href="#" class="primary-button">COMPRAR AHORA</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- slider -->
 
-      <footer></footer>
+        <div class="brands">
+          <div class="container">
+            <div class="wrapper flexitem">
+              <div class="item">
+                <a href="#"
+                  ><img src="assets/img/marcas/marca1.png" alt=""
+                /></a>
+              </div>
+              <div class="item">
+                <a href="#"
+                  ><img src="assets/img/marcas/marca2.jpg" alt=""
+                /></a>
+              </div>
+              <div class="item">
+                <a href="#"
+                  ><img src="assets/img/marcas/marca3.png" alt=""
+                /></a>
+              </div>
+              <div class="item">
+                <a href="#"
+                  ><img src="assets/img/marcas/marca4.png" alt=""
+                /></a>
+              </div>
+              <div class="item">
+                <a href="#"
+                  ><img src="assets/img/marcas/marca5.png" alt=""
+                /></a>
+              </div>
+              <div class="item">
+                <a href="#"
+                  ><img src="assets/img/marcas/marca6.png" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- brands -->
+        <div class="trending">
+          <div class="container">
+            <div class="wrapper">
+              <div class="sectop flexitem">
+                <h2>
+                  <span class="circle"></span
+                  ><span>PRODUCTOS EN TENDENCIA</span>
+                </h2>
+              </div>
+              <div class="column">
+                <div class="flexwrap">
+                  <div class="row products big">
+                    <div class="item">
+                      <div class="offer">
+                        <p>la oferta termina en</p>
+                        <ul class="flexcenter">
+                          <li>1</li>
+                          <li>15</li>
+                          <li>27</li>
+                          <li>60</li>
+                        </ul>
+                      </div>
+                      <div class="media">
+                        <div class="image">
+                          <a href="#">
+                            <img
+                              src="assets/img/tendencia/tendencia1.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="hoverable">
+                          <ul>
+                            <li class="active">
+                              <a href="#"><i class="ri-heart-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-eye-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-shuffle-line"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="discount circle flexcenter">
+                          <span>69%</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <div class="rating">
+                          <div class="stars"></div>
+                          <span class="mini-text">(1.369)</span>
+                        </div>
+                        <h3 class="main-links">
+                          <a href="#">Maquina profesional singer de coser</a>
+                        </h3>
+                        <div class="price">
+                          <span class="current">$99.00</span>
+                          <span class="normal mini-text">129.00</span>
+                        </div>
+                        <div class="stock mini-text">
+                          <div class="qty">
+                            <span
+                              >Stock:
+                              <strong class="qty-available"></strong>106</span
+                            >
+                            <span
+                              >Vendidos:
+                              <strong class="qty-sold"></strong>3.969</span
+                            >
+                          </div>
+                          <div class="bar">
+                            <div class="available"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row products mini">
+                    <div class="item">
+                      <div class="media">
+                        <div class="thumbnail object-cover">
+                          <a href="#">
+                            <img
+                              src="assets/img/tendencia/tendencia2.png"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="hoverable">
+                          <ul>
+                            <li class="active">
+                              <a href="#"><i class="ri-heart-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-eye-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-shuffle-line"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="discount circle flexcenter">
+                          <span>69%</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <h3 class="main-links">
+                          <a href="#">Maquina profesional singer de coser</a>
+                        </h3>
+
+                        <div class="rating">
+                          <div class="stars"></div>
+                          <span class="mini-text">(1.369)</span>
+                        </div>
+                        <div class="price">
+                          <span class="current">$99.00</span>
+                          <span class="normal mini-text">129.00</span>
+                        </div>
+                        <div class="mini-text">
+                          <p>3699 Vendidos</p>
+                          <p>Envio Gratis</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="media">
+                        <div class="thumbnail object-cover">
+                          <a href="#">
+                            <img
+                              src="assets/img/tendencia/tendencia3.jfif"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="hoverable">
+                          <ul>
+                            <li class="active">
+                              <a href="#"><i class="ri-heart-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-eye-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-shuffle-line"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="discount circle flexcenter">
+                          <span>69%</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <h3 class="main-links">
+                          <a href="#">Maquina profesional singer de coser</a>
+                        </h3>
+
+                        <div class="rating">
+                          <div class="stars"></div>
+                          <span class="mini-text">(1.369)</span>
+                        </div>
+                        <div class="price">
+                          <span class="current">$99.00</span>
+                          <span class="normal mini-text">129.00</span>
+                        </div>
+                        <div class="mini-text">
+                          <p>3699 Vendidos</p>
+                          <p>Envio Gratis</p>
+                          <p class="stock-danger">Ultimos 7</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="media">
+                        <div class="thumbnail object-cover">
+                          <a href="#">
+                            <img
+                              src="assets/img/tendencia/tendencia4.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="hoverable">
+                          <ul>
+                            <li class="active">
+                              <a href="#"><i class="ri-heart-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-eye-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-shuffle-line"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="discount circle flexcenter">
+                          <span>69%</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <h3 class="main-links">
+                          <a href="#">Maquina profesional singer de coser</a>
+                        </h3>
+
+                        <div class="rating">
+                          <div class="stars"></div>
+                          <span class="mini-text">(1.369)</span>
+                        </div>
+                        <div class="price">
+                          <span class="current">$99.00</span>
+                          <span class="normal mini-text">129.00</span>
+                        </div>
+                        <div class="mini-text">
+                          <p>3699 Vendidos</p>
+                          <p>Envio Gratis</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row products mini">
+                    <div class="item">
+                      <div class="media">
+                        <div class="thumbnail object-cover">
+                          <a href="#">
+                            <img
+                              src="assets/img/tendencia/tendencia2.png"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="hoverable">
+                          <ul>
+                            <li class="active">
+                              <a href="#"><i class="ri-heart-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-eye-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-shuffle-line"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="discount circle flexcenter">
+                          <span>69%</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <h3 class="main-links">
+                          <a href="#">Maquina profesional singer de coser</a>
+                        </h3>
+
+                        <div class="rating">
+                          <div class="stars"></div>
+                          <span class="mini-text">(1.369)</span>
+                        </div>
+                        <div class="price">
+                          <span class="current">$99.00</span>
+                          <span class="normal mini-text">129.00</span>
+                        </div>
+                        <div class="mini-text">
+                          <p>3699 Vendidos</p>
+                          <p>Envio Gratis</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="media">
+                        <div class="thumbnail object-cover">
+                          <a href="#">
+                            <img
+                              src="assets/img/tendencia/tendencia3.jfif"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="hoverable">
+                          <ul>
+                            <li class="active">
+                              <a href="#"><i class="ri-heart-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-eye-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-shuffle-line"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="discount circle flexcenter">
+                          <span>69%</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <h3 class="main-links">
+                          <a href="#">Maquina profesional singer de coser</a>
+                        </h3>
+
+                        <div class="rating">
+                          <div class="stars"></div>
+                          <span class="mini-text">(1.369)</span>
+                        </div>
+                        <div class="price">
+                          <span class="current">$99.00</span>
+                          <span class="normal mini-text">129.00</span>
+                        </div>
+                        <div class="mini-text">
+                          <p>3699 Vendidos</p>
+                          <p>Envio Gratis</p>
+                          <p class="stock-danger">Ultimos 7</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="media">
+                        <div class="thumbnail object-cover">
+                          <a href="#">
+                            <img
+                              src="assets/img/tendencia/tendencia4.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div class="hoverable">
+                          <ul>
+                            <li class="active">
+                              <a href="#"><i class="ri-heart-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-eye-line"></i></a>
+                            </li>
+                            <li>
+                              <a href=""><i class="ri-shuffle-line"></i></a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="discount circle flexcenter">
+                          <span>69%</span>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <h3 class="main-links">
+                          <a href="#">Maquina profesional singer de coser</a>
+                        </h3>
+
+                        <div class="rating">
+                          <div class="stars"></div>
+                          <span class="mini-text">(1.369)</span>
+                        </div>
+                        <div class="price">
+                          <span class="current">$99.00</span>
+                          <span class="normal mini-text">129.00</span>
+                        </div>
+                        <div class="mini-text">
+                          <p>3699 Vendidos</p>
+                          <p>Envio Gratis</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- trending -->
+
+        <div class="features">
+          <div class="container">
+            <div class="wrapper">
+              <div class="column">
+                <div class="sectop flexitem">
+                  <h2>
+                    <span class="circle"></span
+                    ><span>PRODUCTOS DESTACADOS</span>
+                  </h2>
+                  <div class="second-links">
+                    <a href="#" class="view-all"
+                      >VER TODOS<i class="ri-arrow-right-line"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="products main flexwrap">
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado6.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado1.jfif"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado3.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado4.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado5.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado6.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado3.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="media">
+                      <div class="thumbnail object-cover">
+                        <a href="#">
+                          <img
+                            src="assets/img/destacados/destacado5.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="hoverable">
+                        <ul>
+                          <li class="active">
+                            <a href="#"><i class="ri-heart-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-eye-line"></i></a>
+                          </li>
+                          <li>
+                            <a href=""><i class="ri-shuffle-line"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="discount circle flexcenter">
+                        <span>33%</span>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <div class="rating">
+                        <div class="stars"></div>
+                        <span class="mini-text">(1.369)</span>
+                      </div>
+                      <h3 class="main-links">
+                        <a href="#">Maquina profesional singer de coser</a>
+                      </h3>
+                      <div class="price">
+                        <span class="current">$99.00</span>
+                        <span class="normal mini-text">129.00</span>
+                      </div>
+                      <div class="footer">
+                        <ul class="mini-text">
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                          <li>Descripcion</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- featured products -->
+
+        <div class="banners">
+          <div class="container">
+            <div class="wrapper">
+              <div class="column">
+                <div class="banner flexwrap">
+                  <div class="row">
+                    <div class="item">
+                      <div class="image">
+                        <img src="assets/img/baner/baner1.jpeg" alt="" />
+                      </div>
+                      <div class="text-content flexcol">
+                        <h4>¡Venta Brutal!</h4>
+                        <h3>
+                          <span>Consigue aqui tu</span><br />Maquina de coser
+                        </h3>
+                        <a href="#" class="primary-button">COMPRAR AHORA</a>
+                      </div>
+                      <a href="" class="over-link"></a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="item get-gray">
+                      <div class="image">
+                        <img src="assets/img/baner/baner3.jpeg" alt="" />
+                      </div>
+                      <div class="text-content flexcol">
+                        <h4>¡Venta Brutal!</h4>
+                        <h3>
+                          <span>Consigue aqui tu</span><br />Maquina de coser
+                        </h3>
+                        <a href="#" class="primary-button">COMPRAR AHORA</a>
+                      </div>
+                      <a href="" class="over-link"></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- banners -->
+
+                <div class="product-categories flexwrap">
+                  <div class="row">
+                    <div class="item">
+                      <div class="image">
+                        <img
+                          src="assets/img/product-categories/product-categories1.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content mini-links">
+                        <h4>Titulo</h4>
+                        <ul class="flexcol">
+                          <li><a href="">Subtitulo1</a></li>
+                          <li><a href="">Subtitulo2</a></li>
+                          <li><a href="">Subtitulo3</a></li>
+                          <li><a href="">Subtitulo4</a></li>
+                          <li><a href="">Subtitulo5</a></li>
+                        </ul>
+                        <div class="second-links">
+                          <a href="#" class="view-all"
+                            >VER TODOS<i class="ri-arrow-right-line"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="item">
+                      <div class="image">
+                        <img
+                          src="assets/img/product-categories/product-categories2.jpeg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content mini-links">
+                        <h4>Titulo</h4>
+                        <ul class="flexcol">
+                          <li><a href="">Subtitulo1</a></li>
+                          <li><a href="">Subtitulo2</a></li>
+                          <li><a href="">Subtitulo3</a></li>
+                          <li><a href="">Subtitulo4</a></li>
+                          <li><a href="">Subtitulo5</a></li>
+                        </ul>
+                        <div class="second-links">
+                          <a href="#" class="view-all"
+                            >VER TODOS<i class="ri-arrow-right-line"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="item">
+                      <div class="image">
+                        <img
+                          src="assets/img/product-categories/product-categories3.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content mini-links">
+                        <h4>Titulo</h4>
+                        <ul class="flexcol">
+                          <li><a href="">Subtitulo1</a></li>
+                          <li><a href="">Subtitulo2</a></li>
+                          <li><a href="">Subtitulo3</a></li>
+                          <li><a href="">Subtitulo4</a></li>
+                          <li><a href="">Subtitulo5</a></li>
+                        </ul>
+                        <div class="second-links">
+                          <a href="#" class="view-all"
+                            >VER TODOS<i class="ri-arrow-right-line"></i
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- main -->
+
+      <footer>
+        <div class="newsletter">
+          <div class="container">
+            <div class="wrapper">
+              <div class="box">
+                <div class="content">
+                  <h3>Unete a nuestro boletín</h3>
+                  <p>
+                    Reciba actualizaciones por correo electrónico sobre nuestra
+                    última tienda y <strong>ofertas especiales</strong>
+                  </p>
+                </div>
+                <form action="" class="search"></form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
