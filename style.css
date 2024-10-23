@@ -1014,6 +1014,47 @@ form.search button:hover {
   text-decoration: underline;
 }
 
+/*-------------
+ * 05. FOOTER |
+ *-----------*/
+
+/*---------------
+ * 05. FOOTER    |
+ * a. News Letter|
+ *--------------*/
+
+.newsletter {
+  padding: 2.5em 0;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+
+.newsletter h3 {
+  font-size: 1.5em;
+}
+.newsletter p {
+  font-weight: var(--fw3);
+  color: var(--border-color);
+  margin: 0.5em 0 1.5em;
+}
+.newsletter p strong {
+  color: var(--primary-color);
+}
+.newsletter form {
+  max-width: 500px;
+  width: var(--percent100);
+}
+
+/*---------------
+ * 05. FOOTER    |
+ * b. Widgets    |
+ *--------------*/
+
+.widgets {
+  padding: 3.5em 2.5em;
+  background-color: var(--light-bg-color);
+}
+
 /*---------------
  * 15.RESPONSIVE|
  *-------------*/
@@ -1028,7 +1069,8 @@ form.search button:hover {
     font-size: 1.25em;
   }
   .products.mini,
-  .banner .row {
+  .banner .row,
+  .widgets .row {
     flex: 0 0 50%;
   }
   .products.main .item {
@@ -1222,7 +1264,15 @@ form.search button:hover {
   .products.big .media {
     max-height: 373px;
   }
-  .products.main .item {
+  .products.main .item,
+  .widgets .row {
     flex: 0 0 25%;
+  }
+
+  /* footer */
+  .newsletter .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
