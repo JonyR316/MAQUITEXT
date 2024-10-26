@@ -1077,6 +1077,124 @@ form.search button:hover {
 }
 
 /*---------------
+ * 05. FOOTER    |
+ * maquitex    |
+ *--------------*/
+.footer {
+  background-color: #111; /* Color de fondo oscuro */
+  color: #fff; /* Color de texto blanco */
+  padding: 2em 0;
+  font-size: 1.2em;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 1em;
+  border-bottom: 2px solid #444;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h4 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  margin: 0.2em 0;
+}
+
+.footer-section i {
+  color: #ffffff;
+  margin-right: 0.1em;
+  font-size: 2em;
+}
+
+.contact-info p strong {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.social-media {
+  text-align: center;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0 0.5em;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ccc;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1em;
+  font-size: 0.8em;
+  color: #bbb;
+}
+
+/*---------------
+ * 16.Icons     |
+ *-------------*/
+.info-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-bg-color);
+  padding: 2em;
+  margin-top: 2em;
+
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 150px;
+  flex: 1;
+}
+
+.info-item i {
+  font-size: 2.5em;
+  color: var(--dark-color);
+  margin-bottom: 0.5em;
+}
+
+.info-item h4 {
+  font-size: 1.1em;
+  font-weight: var(--fw6);
+  margin-bottom: 0.3em;
+}
+
+.info-item p {
+  font-size: var(--font-small);
+  color: var(--light-text-color);
+}
+
+/*---------------
  * 15.RESPONSIVE|
  *-------------*/
 @media screen and (min-width: 481px) {
@@ -1091,7 +1209,9 @@ form.search button:hover {
   }
   .products.mini,
   .banner .row,
-  .widgets .row {
+  .banners .row,
+  .widgets .row,
+  .footer {
     flex: 0 0 50%;
   }
   .products.main .item {
