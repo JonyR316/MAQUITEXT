@@ -665,7 +665,7 @@ form.search button:hover {
   justify-content: space-between;
   padding-bottom: 0.5em;
   margin-bottom: 2em;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 3px solid var(--border-color);
 }
 .sectop h2 {
   position: relative;
@@ -676,7 +676,7 @@ form.search button:hover {
   padding: 0 0 0 2em;
 }
 .sectop h2 .circle {
-  top: -2px;
+  top: 1px;
 }
 
 /*------------------------
@@ -1161,7 +1161,8 @@ form.search button:hover {
 }
 
 /*---------------
- * 16.Icons     |
+ * 5.1 Footer
+ * ICONS        |
  *-------------*/
 .info-icons {
   display: flex;
@@ -1199,6 +1200,101 @@ form.search button:hover {
 .info-item p {
   font-size: var(--font-small);
   color: var(--light-text-color);
+}
+
+/*-----------------
+ * 06. BOTTOM MENU|
+ *---------------*/
+.menu-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background-color: var(--white-color);
+  box-shadow: 0 -2px 10px rgb(0 0 0/10%);
+  z-index: 900;
+  border-top: 1px solid black;
+}
+.menu-bottom nav li {
+  flex: 1;
+}
+.menu-bottom nav li a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em 0;
+  color: var(--light-text-color);
+  transition: var(--trans-color);
+}
+.menu-bottom nav li a:hover {
+  color: var(--dark-color);
+}
+.menu-bottom nav li a span {
+  font-size: var(--font-smaller);
+}
+.menu-bottom nav li a i {
+  font-size: 1.25em;
+}
+.menu-bottom .fly-item {
+  right: 50%;
+  width: 16px;
+  border-radius: var(--percent50);
+  margin-right: -20px;
+  background-color: var(--secondary-dark-color);
+}
+
+/*------------------
+ * 06. BOTTOM MENU |
+ * a.  Search      |
+ *----------------*/
+
+.search-bottom {
+  position: fixed;
+  bottom: 60px;
+  width: var(--percent100);
+  padding: 2.5em 0;
+  background-color: var(--secondary-dark-color);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  will-change: visivility, opacity;
+}
+.showsearch .search-bottom {
+  visibility: inherit;
+  opacity: 1;
+}
+.search-bottom .t-close {
+  position: absolute;
+  top: -54px;
+  right: 0;
+  background-color: var(--primary-color);
+}
+.search-bottom,
+.t-close:hover {
+  background-color: var(--light-text-color);
+}
+
+/*-----------------
+ * 07 OVERLAY     |
+ *---------------*/
+
+.overlay {
+  position: fixed;
+  width: var(--percent100);
+  height: var(--percent100);
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  will-change: visibility, opacity;
+}
+.showmenu .overlay {
+  opacity: 1;
+  visibility: inherit;
 }
 
 /*---------------

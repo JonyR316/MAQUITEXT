@@ -52,3 +52,14 @@ const swiper = new Swiper(".swiper", {
     delay: 3000,
   },
 });
+
+//show search
+const searchButton = document.querySelector(".t-search"),
+  tClose = document.querySelector(".search-close"),
+  showClass = document.querySelector(".site");
+searchButton.addEventListener("click", function () {
+  showClass.classList.toggle("showsearch");
+});
+tClose.addEventListener("click", function () {
+  showClass.classList.remove("showsearch");
+});
