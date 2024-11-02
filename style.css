@@ -1716,6 +1716,11 @@ form label {
   .products.one .thumbnail-show {
     height: 160px;
   }
+  .info-icons .info-item {
+    margin-bottom: 2em;
+    height: 680px;
+    height: 160px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1740,6 +1745,11 @@ form label {
   .is_sticky {
     position: sticky;
     top: 2em;
+  }
+  .info-icons .info-item {
+    margin-bottom: 2em;
+    height: 680px;
+    height: 160px;
   }
 }
 
@@ -1939,6 +1949,11 @@ form label {
 
   /* footer */
   .newsletter .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .info-icons .info-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
