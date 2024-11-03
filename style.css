@@ -1363,7 +1363,6 @@ form.search button:hover {
 }
 .products.one .big-image {
   position: relative;
-
   margin-bottom: 1em;
   border-radius: 12px;
   box-shadow: 9px 3px 12px #000;
@@ -1373,6 +1372,7 @@ form.search button:hover {
   width: var(--percent100);
   height: var(--percent100);
   display: block;
+  background-color: #e7e5e5;
 }
 .products.one .thumbnail-show {
   position: relative;
@@ -1696,6 +1696,50 @@ form label {
   font-weight: var(--fw5);
   margin-bottom: 0.5em;
   text-transform: uppercase;
+}
+form .primary-button {
+  box-shadow: 9px 3px 12px #000;
+  background-color: #0144fc;
+}
+
+/*--------------------------------
+ * 09. PAGE SINGLE: SPECIAL OFFER |
+ *-------------------------------*/
+
+.page-single .stock {
+  margin: 2em 0;
+}
+.page-single .stock .qty span:last-child {
+  color: initial;
+}
+.page-product .stock .bar {
+  height: 10px;
+}
+.page-single .stock .bar .available {
+  margin: 0;
+  border-radius: 0;
+  background-color: var(--dark-color);
+}
+
+.related-products .content {
+  height: var(--percent100);
+}
+.related-products .offer {
+  margin: 0;
+}
+.related-products .offer p {
+  margin: 0 1em 0 0;
+  text-transform: none;
+  line-height: 1;
+}
+.related-products .offer ul li {
+  width: 28px;
+  height: 28px;
+  font-size: var(--font-small);
+  padding: 0.5em 0.25em;
+}
+.related-products .content .stock {
+  margin-top: auto;
 }
 
 /*---------------
