@@ -106,3 +106,11 @@ for (let x = 0; x < stocks.length; x++) {
 
   stocks[x].querySelector(".available").style.width = percent + "%";
 }
+
+//Paginacion
+document.querySelectorAll(".page-btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    document.querySelector(".page-btn.active").classList.remove("active");
+    this.classList.add("active");
+  });
+});

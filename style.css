@@ -1743,6 +1743,46 @@ form .primary-button {
 }
 
 /*---------------
+ * PAGINACION   |
+ *-------------*/
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-btn {
+  padding: 10px 15px;
+  margin: 0 5px;
+  background-color: white;
+  border: 1px solid #ccc;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.page-btn.active {
+  background-color: #333;
+  color: white;
+}
+
+.page-btn:focus {
+  outline: none;
+  animation: blink 0.3s ease-in-out;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/*---------------
  * 15.RESPONSIVE|
  *-------------*/
 @media screen and (min-width: 481px) {
