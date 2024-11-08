@@ -114,3 +114,23 @@ document.querySelectorAll(".page-btn").forEach((button) => {
     this.classList.add("active");
   });
 });
+
+// Variables
+let quantity = 1;
+const maxQuantity = 99;
+const minQuantity = 1;
+
+// Incremento y decremento de cantidad
+document.getElementById("increment").addEventListener("click", function () {
+  if (quantity < maxQuantity) {
+    quantity++;
+    document.getElementById("quantity").value = quantity;
+  }
+});
+
+document.getElementById("decrement").addEventListener("click", function () {
+  if (quantity > minQuantity) {
+    quantity--;
+    document.getElementById("quantity").value = quantity;
+  }
+});
