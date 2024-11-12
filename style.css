@@ -1798,6 +1798,160 @@ form .primary-button {
   }
 }
 
+/*------------
+   CARRITO       
+------------*/
+.cart {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  right: -1rem;
+  top: 3rem;
+  background-color: rgb(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  z-index: 10;
+  @media (min-width: 1400px) {
+    right: -20rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      th {
+        padding: 1rem;
+        color: #f7f8f9;
+      }
+
+      border-bottom: 1px solid white;
+    }
+
+    tbody {
+      tr {
+        padding: 2rem 0;
+      }
+      td {
+        color: #f7f8f9;
+        padding: 1rem;
+        img {
+          width: 10rem;
+        }
+
+        p {
+          font-size: 1.6rem;
+          font-weight: 400;
+        }
+
+        input {
+          width: 6rem;
+          background-color: transparent;
+          border: 1px solid #f7f8f9;
+          padding: 0.7rem;
+          color: #f7f8f9;
+          border-radius: 0.5rem;
+          &:focus,
+          &:active {
+            outline: none;
+          }
+        }
+
+        button {
+          border: none;
+          width: 3rem;
+          height: 3rem;
+          background-color: #dc2626;
+          color: #f7f8f9;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+
+    tfoot {
+      .total {
+        text-align: right;
+        padding-bottom: 2rem;
+
+        .heading-total {
+          color: white;
+          span {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+
+      td {
+        button {
+          width: 100%;
+          background-color: rgb(255, 255, 255, 0.75);
+          padding: 1rem;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          color: #404040;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.btn-cart {
+  position: relative;
+}
+
+.btn-cart:hover .cart {
+  display: block;
+  opacity: 1;
+}
+
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 45px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInOut 5s ease forwards;
+  font-size: 2rem;
+
+  &.error {
+    background-color: #f44336;
+    color: #fff;
+  }
+
+  &.success {
+    background-color: #4caf50;
+    color: #fff;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
 /*---------------
  * 15.RESPONSIVE|
  *-------------*/
@@ -1821,8 +1975,12 @@ form .primary-button {
     height: 680px;
     height: 160px;
   }
-}
 
+  .cart .cart-responsive p {
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
+}
 @media screen and (min-width: 768px) {
   .products .price .current {
     font-size: 1.25em;
@@ -1850,6 +2008,10 @@ form .primary-button {
     margin-bottom: 2em;
     height: 680px;
     height: 160px;
+  }
+  .cart .cart-responsive p {
+    font-size: 0.7rem;
+    font-weight: 400;
   }
 }
 

@@ -138,6 +138,7 @@ document.getElementById("decrement").addEventListener("click", function () {
 //Carrito
 
 const listProducts = document.querySelector("#listProducts");
+const contentProducts = document.querySelector("#contentProducts");
 
 let productsArray = [];
 
@@ -173,6 +174,7 @@ function selectData(prod) {
 }
 
 function productsHtml() {
+  cleanHtml();
   productsArray.forEach((prod) => {
     const { img, title, price, quantity, id } = prod;
 
@@ -210,6 +212,10 @@ function productsHtml() {
 
     tr.append(tdImg, tdTitle, tdPrice, tdQuantity, tdDelete);
 
-    console.log(tr);
+    contentProducts.appendChild(tr);
   });
+}
+
+function cleanHtml() {
+  contentProducts.innerHTML = "";
 }

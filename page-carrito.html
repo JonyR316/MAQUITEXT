@@ -536,7 +536,39 @@
         <!--header-main-->
       </header>
 
-      <main></main>
+      <main>
+        <div class="cart">
+          <div class="cart">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="contentProducts"></tbody>
+
+              <tfoot>
+                <tr>
+                  <td colspan="5" class="total">
+                    <h4 class="heading-total">
+                      Total: <span id="total"></span>
+                    </h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5">
+                    <button type="button" id="emptyCart">Empty Cart</button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </main>
       <!-- main -->
 
       <footer>

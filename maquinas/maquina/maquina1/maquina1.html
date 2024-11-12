@@ -335,17 +335,45 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="iscart">
+                    <a href="#" class="btn-cart">
                       <div class="icon-large">
                         <i class="ri-shopping-cart-line"></i>
                         <div class="fly-item">
-                          <span class="item-number">0</span>
+                          <span class="item-number" id="cartCount">0</span>
+                          <div class="cart">
+                        <div class="cart-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>PRODUCTO</th>
+                                        <th>DESCRIPCION</th>
+                                        <th>PRECIO</th>
+                                        <th>CANTIDAD</th>
+                                        <th>ELIMINAR</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contentProducts">
+                                    
+                                </tbody>
+                    
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="total">
+                                            <h4 class="heading-total">TOTAL: <span id="total"></span></h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <button type="button" id="emptyCart">VACIAR CARRITO</button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
                         </div>
                       </div>
-                      <div class="icon-text">
-                        <div class="mini-text">TOTAL</div>
-                        <div class="cart-total">$0.00</div>
-                      </div>
+                      
                     </a>
                   </li>
                 </ul>
