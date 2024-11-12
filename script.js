@@ -134,3 +134,82 @@ document.getElementById("decrement").addEventListener("click", function () {
     document.getElementById("quantity").value = quantity;
   }
 });
+
+//Carrito
+
+const listProducts = document.querySelector("#listProducts");
+
+let productsArray = [];
+
+document.addEventListener("DOMContentLoaded", function () {
+  eventListeners();
+});
+
+function eventListeners() {
+  listProducts.addEventListener("click", getDataElements);
+}
+
+function getDataElements(e) {
+  if (e.target.classList.contains("btn-add")) {
+    const elementHtml =
+      e.target.parentElement.parentElement.parentElement.parentElement
+        .parentElement.parentElement.parentElement;
+    selectData(elementHtml);
+  }
+}
+
+function selectData(prod) {
+  const productObj = {
+    img: prod.querySelector("img").src,
+    title: prod.querySelector("h1").textContent,
+    price: parseFloat(
+      prod.querySelector("#currentPrice").textContent.replace("$", "")
+    ),
+    id: parseInt(prod.querySelector('button[type="button"]').dataset.id, 10),
+    quantity: 1,
+  };
+  productsArray = [...productsArray, productObj];
+  productsHtml();
+}
+
+function productsHtml() {
+  productsArray.forEach((prod) => {
+    const { img, title, price, quantity, id } = prod;
+
+    const tr = document.createElement("tr");
+
+    const tdImg = document.createElement("td");
+    const prodImg = document.createElement("img");
+    prodImg.src = img;
+    prodImg.alt = "img product";
+    tdImg.appendChild(prodImg);
+
+    const tdTitle = document.createElement("td");
+    const prodTitle = document.createElement("p");
+    prodTitle.textContent = title;
+    tdTitle.appendChild(prodTitle);
+
+    const tdPrice = document.createElement("td");
+    const prodPrice = document.createElement("p");
+    prodPrice.textContent = `$${price.toFixed(2)}`;
+    tdPrice.appendChild(prodPrice);
+
+    const tdQuantity = document.createElement("td");
+    const prodQuantity = document.createElement("input");
+    prodQuantity.type = "number";
+    prodQuantity.min = "1";
+    prodQuantity.value = quantity;
+    prodQuantity.dataset.id = id;
+    tdQuantity.appendChild(prodQuantity);
+
+    const tdDelete = document.createElement("td");
+    const prodDelete = document.createElement("button");
+    prodDelete.type = "button";
+    prodDelete.textContent = "X";
+    tdDelete.appendChild(prodDelete);
+
+    tr.append(tdImg, tdTitle, tdPrice, tdQuantity, tdDelete);
+
+    console.log(tr);
+  });
+}

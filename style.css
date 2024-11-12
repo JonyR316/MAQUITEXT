@@ -170,6 +170,22 @@ h4 {
   overflow: hidden;
 }
 
+.btn-add {
+  font-size: var(--font-small);
+  padding: 0.9em 2em;
+  height: auto;
+  width: fit-content;
+  border-radius: 2em;
+  transition: var(--trans-background-color);
+}
+.btn-add {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+.btn-add:hover {
+  background-color: var(--dark-color);
+}
+
 .primary-button,
 .secondary-button,
 .light-button {
