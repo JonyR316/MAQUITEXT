@@ -389,6 +389,14 @@ nav .fly-item {
 .dpt-cat .dpt-head .mini-text {
   color: var(--light-bg-color);
 }
+
+.mini-text p {
+  margin: 0 9px; /* Espacio entre los párrafos */
+}
+
+.text-group {
+  display: flex;
+}
 .dpt-cat .dpt-trigger {
   position: absolute;
   right: 0;
@@ -831,6 +839,7 @@ form.search button:hover {
 .products h3 a:hover {
   text-decoration: underline;
 }
+
 .products .price .current {
   font-size: calc(1em + 1vw);
   color: var(--primary-color);
@@ -840,6 +849,13 @@ form.search button:hover {
   color: var(--light-text-color);
   text-decoration: line-through;
 }
+
+.price-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .products .stock .qty {
   display: flex;
   justify-content: space-between;
