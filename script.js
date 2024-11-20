@@ -115,37 +115,22 @@ document.querySelectorAll(".page-btn").forEach((button) => {
   });
 });
 
-//Carrito
+// Variables
+let quantity = 1;
+const maxQuantity = 99;
+const minQuantity = 1;
 
-const listProducts = document.querySelector("#listProducts");
-
-let productsArray = [];
-
-document.addEventListener("DOMContentLoaded", function () {
-  eventListeners();
+// Incremento y decremento de cantidad
+document.getElementById("increment").addEventListener("click", function () {
+  if (quantity < maxQuantity) {
+    quantity++;
+    document.getElementById("quantity").value = quantity;
+  }
 });
 
-function eventListeners() {
-  listProducts.addEventListener("click", getDataElements);
-}
-
-function getDataElements(e) {
-  if (e.target.classList.contains("btn-add")) {
-    const elementHtml = e.target.parentElement.parentElement.parentElement;
-    selectData(elementHtml);
+document.getElementById("decrement").addEventListener("click", function () {
+  if (quantity > minQuantity) {
+    quantity--;
+    document.getElementById("quantity").value = quantity;
   }
-}
-
-function selectData(prod) {
-  const productObj = {
-    img: prod.querySelector("img").src,
-    title: prod.querySelector("h4").textContent,
-    price: parseFloat(
-      prod.querySelector("#currentPrice").textContent.replace("$", "")
-    ),
-    id: parseInt(prod.querySelector('button[type="button"]').dataset.id, 10),
-    quantity: 1,
-  };
-  productsArray = [...productsArray, productObj];
-  console.log(productsArray);
-}
+});
