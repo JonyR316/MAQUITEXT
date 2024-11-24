@@ -115,22 +115,76 @@ document.querySelectorAll(".page-btn").forEach((button) => {
   });
 });
 
-// Variables
-let quantity = 1;
-const maxQuantity = 99;
-const minQuantity = 1;
+//Tiempo cronometro
+document.addEventListener("DOMContentLoaded", () => {
+  const countdownElement = document.getElementById("countdown");
+  const timeUnits = Array.from(countdownElement.children);
 
-// Incremento y decremento de cantidad
-document.getElementById("increment").addEventListener("click", function () {
-  if (quantity < maxQuantity) {
-    quantity++;
-    document.getElementById("quantity").value = quantity;
+  // Inicializar valores: horas, minutos, segundos
+  let hours = parseInt(timeUnits[0].textContent);
+  let minutes = parseInt(timeUnits[1].textContent);
+  let seconds = parseInt(timeUnits[2].textContent);
+  let millis = parseInt(timeUnits[3].textContent);
+
+  function updateCountdown() {
+    millis--;
+    if (millis < 0) {
+      millis = 99;
+      seconds--;
+    }
+    if (seconds < 0) {
+      seconds = 59;
+      minutes--;
+    }
+    if (minutes < 0) {
+      minutes = 59;
+      hours--;
+    }
+    if (hours < 0) {
+      clearInterval(countdownTimer);
+      alert("¡La oferta ha terminado!");
+      return;
+    }
+
+    // Actualizar el DOM
+    timeUnits[0].textContent = hours.toString().padStart(2, "0");
+    timeUnits[1].textContent = minutes.toString().padStart(2, "0");
+    timeUnits[2].textContent = seconds.toString().padStart(2, "0");
+    timeUnits[3].textContent = millis.toString().padStart(2, "0");
   }
+
+  const countdownTimer = setInterval(updateCountdown, 10); // Actualizar cada 10ms para incluir milisegundos
 });
 
-document.getElementById("decrement").addEventListener("click", function () {
-  if (quantity > minQuantity) {
-    quantity--;
-    document.getElementById("quantity").value = quantity;
+// Seleccion del icono de corazon
+const heartIcons = document.querySelectorAll(".ri-heart-line");
+
+// Recuperar los estados guardados de localStorage
+const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+// Restaurar los estados iniciales de los corazones
+heartIcons.forEach((icon, index) => {
+  if (savedFavorites.includes(index)) {
+    icon.classList.add("ri-heart-fill", "heartbeat");
+    icon.classList.remove("ri-heart-line");
   }
+
+  // Agregar evento de clic
+  icon.parentElement.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Alternar las clases del ícono
+    const isFavorited = icon.classList.toggle("ri-heart-fill");
+    icon.classList.toggle("ri-heart-line");
+    icon.classList.toggle("heartbeat", isFavorited);
+
+    // Actualizar los estados en localStorage
+    if (isFavorited) {
+      savedFavorites.push(index); // Agregar el índice del ícono marcado
+    } else {
+      const removeIndex = savedFavorites.indexOf(index);
+      savedFavorites.splice(removeIndex, 1); // Quitar el índice del ícono desmarcado
+    }
+    localStorage.setItem("favorites", JSON.stringify(savedFavorites));
+  });
 });
