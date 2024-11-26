@@ -1832,6 +1832,9 @@ form .primary-button {
 .ri-heart-fill {
   color: red; /* Cambia el color del ícono marcado */
 }
+.ri-heart-line {
+  color: red;
+}
 @keyframes heartbeat {
   0%,
   100% {
@@ -1849,6 +1852,7 @@ form .primary-button {
 .inactive-link {
   pointer-events: none; /* Desactiva cualquier interacción del enlace */
   cursor: default; /* Cambia el cursor a uno no interactivo */
+  color: red;
 }
 
 /*------------
