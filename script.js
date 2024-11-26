@@ -156,7 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const countdownTimer = setInterval(updateCountdown, 10); // Actualizar cada 10ms para incluir milisegundos
 });
 
-// Seleccion del icono de corazon
+// Elemento del contador en el encabezado
+const heartCounter = document.querySelector(".fly-item .item-number");
+
+// Seleccion del icono de corazón
 const heartIcons = document.querySelectorAll(".ri-heart-line");
 
 // Recuperar los estados guardados de localStorage
@@ -186,5 +189,17 @@ heartIcons.forEach((icon, index) => {
       savedFavorites.splice(removeIndex, 1); // Quitar el índice del ícono desmarcado
     }
     localStorage.setItem("favorites", JSON.stringify(savedFavorites));
+
+    // Actualizar el contador en el encabezado
+    updateHeartCounter();
   });
 });
+
+// Actualizar contador de favoritos
+function updateHeartCounter() {
+  const favoriteCount = savedFavorites.length;
+  heartCounter.textContent = favoriteCount;
+}
+
+// Inicializar contador al cargar la página
+updateHeartCounter();
