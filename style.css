@@ -1846,6 +1846,11 @@ form .primary-button {
   animation: heartbeat 0.6s ease-in-out infinite;
 }
 
+.inactive-link {
+  pointer-events: none; /* Desactiva cualquier interacción del enlace */
+  cursor: default; /* Cambia el cursor a uno no interactivo */
+}
+
 /*------------
    CARRITO       
 ------------*/

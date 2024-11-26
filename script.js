@@ -156,10 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const countdownTimer = setInterval(updateCountdown, 10); // Actualizar cada 10ms para incluir milisegundos
 });
 
+// FAVORITOS
+
 // Elemento del contador en el encabezado
 const heartCounter = document.querySelector(".fly-item .item-number");
 
-// Seleccion del icono de corazón
+// Selección de los íconos de corazón en los productos
 const heartIcons = document.querySelectorAll(".ri-heart-line");
 
 // Recuperar los estados guardados de localStorage
@@ -203,3 +205,14 @@ function updateHeartCounter() {
 
 // Inicializar contador al cargar la página
 updateHeartCounter();
+
+// Seleccionar el enlace que envuelve el corazón al lado del carrito
+const heartLink = document.querySelector(".inactive-link");
+
+// Desactivar completamente el clic
+if (heartLink) {
+  heartLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Cancela cualquier acción predeterminada
+    event.stopPropagation(); // Detiene la propagación del evento
+  });
+}
