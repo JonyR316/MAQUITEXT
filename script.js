@@ -216,3 +216,46 @@ if (heartLink) {
     event.stopPropagation(); // Detiene la propagación del evento
   });
 }
+
+// Capturar el precio y verificar si ya fue comprado
+document.querySelectorAll(".buy-button").forEach((button) => {
+  button.addEventListener("click", function () {
+    const productElement = this.closest(".item"); // Contenedor del producto
+    const currentPriceElement = productElement.querySelector(".price .current");
+    const productId = this.dataset.id; // Identificador único del producto (por ejemplo, 'sigma1' o 'sigma2')
+
+    if (currentPriceElement) {
+      const price = currentPriceElement.textContent.trim();
+
+      // Recuperar el carrito actual y la lista de productos comprados
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const purchasedProducts =
+        JSON.parse(localStorage.getItem("purchasedProducts")) || [];
+
+      // Verificar si el producto ya fue comprado
+      if (purchasedProducts.includes(productId)) {
+        alert("Este producto ya está en el carrito.");
+        return; // Detener ejecución
+      }
+
+      // Agregar el producto al carrito y a la lista de productos comprados
+      cart.push({ id: productId, price: price });
+      purchasedProducts.push(productId);
+
+      // Guardar el carrito actualizado en localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem(
+        "purchasedProducts",
+        JSON.stringify(purchasedProducts)
+      );
+
+      alert("Producto agregado al carrito");
+
+      // Opcional: Deshabilitar el botón para productos comprados
+      this.disabled = true;
+      this.textContent = "Agregado";
+    } else {
+      console.error("Precio no encontrado para este producto.");
+    }
+  });
+});
