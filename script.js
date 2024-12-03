@@ -217,45 +217,67 @@ if (heartLink) {
   });
 }
 
-// Capturar el precio y verificar si ya fue comprado
+//Compra a Carrito
 document.querySelectorAll(".buy-button").forEach((button) => {
   button.addEventListener("click", function () {
     const productElement = this.closest(".item"); // Contenedor del producto
-    const currentPriceElement = productElement.querySelector(".price .current");
-    const productId = this.dataset.id; // Identificador único del producto (por ejemplo, 'sigma1' o 'sigma2')
+    const currentPriceElement = productElement.querySelector(".price .current"); // Precio del producto
+    const quantityElement = productElement.querySelector("#quantity"); // Cantidad del producto
+    const productId = this.dataset.id; // ID único del producto
 
-    if (currentPriceElement) {
-      const price = currentPriceElement.textContent.trim();
+    if (currentPriceElement && quantityElement && productId) {
+      const price = currentPriceElement.textContent.trim(); // Obtener el precio
+      const quantity = parseInt(quantityElement.value.trim(), 10); // Obtener la cantidad como número
 
-      // Recuperar el carrito actual y la lista de productos comprados
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const purchasedProducts =
-        JSON.parse(localStorage.getItem("purchasedProducts")) || [];
-
-      // Verificar si el producto ya fue comprado
-      if (purchasedProducts.includes(productId)) {
-        alert("Este producto ya está en el carrito.");
-        return; // Detener ejecución
+      // Validar que la cantidad sea mayor o igual a 1
+      if (isNaN(quantity) || quantity < 1) {
+        alert("Por favor, selecciona una cantidad válida (mínimo 1).");
+        return;
       }
 
-      // Agregar el producto al carrito y a la lista de productos comprados
-      cart.push({ id: productId, price: price });
-      purchasedProducts.push(productId);
+      // Recuperar el carrito desde localStorage
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Verificar si el producto ya está en el carrito
+      const existingProduct = cart.find((item) => item.id === productId);
+      if (existingProduct) {
+        alert("Este producto ya está en el carrito.");
+        return;
+      }
+
+      // Agregar el producto al carrito con la cantidad seleccionada
+      cart.push({ id: productId, price: price, quantity: quantity });
 
       // Guardar el carrito actualizado en localStorage
       localStorage.setItem("cart", JSON.stringify(cart));
-      localStorage.setItem(
-        "purchasedProducts",
-        JSON.stringify(purchasedProducts)
-      );
 
       alert("Producto agregado al carrito");
 
-      // Opcional: Deshabilitar el botón para productos comprados
+      // Deshabilitar el botón para productos comprados
       this.disabled = true;
       this.textContent = "Agregado";
     } else {
-      console.error("Precio no encontrado para este producto.");
+      console.error(
+        "Error al agregar el producto al carrito. Verifica los datos."
+      );
     }
+  });
+});
+
+document.querySelectorAll(".qty-control").forEach((control) => {
+  const decrementButton = control.querySelector("#decrement");
+  const incrementButton = control.querySelector("#increment");
+  const quantityInput = control.querySelector("#quantity");
+
+  decrementButton.addEventListener("click", () => {
+    let currentValue = parseInt(quantityInput.value, 10);
+    if (currentValue > 1) {
+      quantityInput.value = currentValue - 1;
+    }
+  });
+
+  incrementButton.addEventListener("click", () => {
+    let currentValue = parseInt(quantityInput.value, 10);
+    quantityInput.value = currentValue + 1;
   });
 });

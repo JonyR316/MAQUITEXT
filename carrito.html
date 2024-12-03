@@ -852,20 +852,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.js"></script>
     <script src="/script.js"></script>
     <script>
-      // Recuperar y mostrar los precios guardados
       document.addEventListener("DOMContentLoaded", () => {
-        const pricesList = document.getElementById("product-prices");
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const pricesList = document.getElementById("product-prices"); // Contenedor donde se mostrarán los productos
+        const cart = JSON.parse(localStorage.getItem("cart")) || []; // Recuperar carrito desde localStorage
 
         if (cart.length > 0) {
-          // Mostrar cada precio en una lista
-          cart.forEach((price) => {
+          cart.forEach((item) => {
             const listItem = document.createElement("li");
-            listItem.textContent = `Precio: ${price}`;
+            listItem.textContent = `Producto: ${item.id}, Precio: ${item.price}, Cantidad: ${item.quantity}`;
             pricesList.appendChild(listItem);
           });
         } else {
-          // Mostrar mensaje si el carrito está vacío
           const emptyMessage = document.createElement("li");
           emptyMessage.textContent = "El carrito está vacío.";
           pricesList.appendChild(emptyMessage);
