@@ -859,7 +859,7 @@
         if (cart.length > 0) {
           cart.forEach((item) => {
             const listItem = document.createElement("li");
-            listItem.textContent = `Producto: ${item.id}, Precio: ${item.price}, Cantidad: ${item.quantity}`;
+            listItem.textContent = `Producto: ${item.title}, Precio: ${item.price}, Cantidad: ${item.quantity}`;
             pricesList.appendChild(listItem);
           });
         } else {

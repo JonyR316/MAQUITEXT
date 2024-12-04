@@ -223,11 +223,18 @@ document.querySelectorAll(".buy-button").forEach((button) => {
     const productElement = this.closest(".item"); // Contenedor del producto
     const currentPriceElement = productElement.querySelector(".price .current"); // Precio del producto
     const quantityElement = productElement.querySelector("#quantity"); // Cantidad del producto
+    const productTitleElement = document.querySelector("h1.title"); // Título del producto
     const productId = this.dataset.id; // ID único del producto
 
-    if (currentPriceElement && quantityElement && productId) {
+    if (
+      currentPriceElement &&
+      quantityElement &&
+      productTitleElement &&
+      productId
+    ) {
       const price = currentPriceElement.textContent.trim(); // Obtener el precio
       const quantity = parseInt(quantityElement.value.trim(), 10); // Obtener la cantidad como número
+      const title = productTitleElement.textContent.trim(); // Obtener el título del producto
 
       // Validar que la cantidad sea mayor o igual a 1
       if (isNaN(quantity) || quantity < 1) {
@@ -245,17 +252,18 @@ document.querySelectorAll(".buy-button").forEach((button) => {
         return;
       }
 
-      // Agregar el producto al carrito con la cantidad seleccionada
-      cart.push({ id: productId, price: price, quantity: quantity });
+      // Agregar el producto al carrito con título, precio y cantidad
+      cart.push({
+        id: productId,
+        title: title,
+        price: price,
+        quantity: quantity,
+      });
 
       // Guardar el carrito actualizado en localStorage
       localStorage.setItem("cart", JSON.stringify(cart));
 
       alert("Producto agregado al carrito");
-
-      // Deshabilitar el botón para productos comprados
-      this.disabled = true;
-      this.textContent = "Agregado";
     } else {
       console.error(
         "Error al agregar el producto al carrito. Verifica los datos."
