@@ -221,8 +221,8 @@ if (heartLink) {
 document.querySelectorAll(".buy-button").forEach((button) => {
   button.addEventListener("click", function () {
     const productElement = this.closest(".item"); // Contenedor del producto
-    const currentPriceElement = productElement.querySelector(".price .current"); // Precio del producto
-    const quantityElement = productElement.querySelector("#quantity"); // Cantidad del producto
+    const currentPriceElement = productElement.querySelector(".price .current"); // Precio unitario
+    const quantityElement = productElement.querySelector("#quantity"); // Cantidad seleccionada
     const productTitleElement = document.querySelector("h1.title"); // Título del producto
     const productId = this.dataset.id; // ID único del producto
 
@@ -232,11 +232,13 @@ document.querySelectorAll(".buy-button").forEach((button) => {
       productTitleElement &&
       productId
     ) {
-      const price = currentPriceElement.textContent.trim(); // Obtener el precio
+      const price = parseFloat(
+        currentPriceElement.textContent.trim().replace("$", "")
+      ); // Obtener el precio como número
       const quantity = parseInt(quantityElement.value.trim(), 10); // Obtener la cantidad como número
       const title = productTitleElement.textContent.trim(); // Obtener el título del producto
 
-      // Validar que la cantidad sea mayor o igual a 1
+      // Validar que la cantidad sea válida
       if (isNaN(quantity) || quantity < 1) {
         alert("Por favor, selecciona una cantidad válida (mínimo 1).");
         return;
@@ -252,12 +254,16 @@ document.querySelectorAll(".buy-button").forEach((button) => {
         return;
       }
 
-      // Agregar el producto al carrito con título, precio y cantidad
+      // Calcular el precio total del producto
+      const totalPrice = price * quantity;
+
+      // Agregar el producto al carrito con título, cantidad, precio unitario y precio total
       cart.push({
         id: productId,
         title: title,
-        price: price,
+        price: `$${price.toFixed(2)}`, // Guardar el precio unitario formateado
         quantity: quantity,
+        totalPrice: `$${totalPrice.toFixed(2)}`, // Guardar el precio total formateado
       });
 
       // Guardar el carrito actualizado en localStorage

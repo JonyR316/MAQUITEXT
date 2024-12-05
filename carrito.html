@@ -854,19 +854,58 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const pricesList = document.getElementById("product-prices"); // Contenedor donde se mostrarán los productos
-        const cart = JSON.parse(localStorage.getItem("cart")) || []; // Recuperar carrito desde localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || []; // Recuperar carrito desde localStorage
 
-        if (cart.length > 0) {
-          cart.forEach((item) => {
-            const listItem = document.createElement("li");
-            listItem.textContent = `Producto: ${item.title}, Precio: ${item.price}, Cantidad: ${item.quantity}`;
-            pricesList.appendChild(listItem);
-          });
-        } else {
-          const emptyMessage = document.createElement("li");
-          emptyMessage.textContent = "El carrito está vacío.";
-          pricesList.appendChild(emptyMessage);
-        }
+        const renderCart = () => {
+          pricesList.innerHTML = ""; // Limpiar la lista para renderizar actualizaciones
+
+          if (cart.length > 0) {
+            cart.forEach((item, index) => {
+              const listItem = document.createElement("li");
+
+              listItem.innerHTML = `
+                Producto: ${item.title}, 
+                Precio unitario: ${item.price}, 
+                Cantidad: 
+                <button class="decrement" data-index="${index}">-</button>
+                <span>${item.quantity}</span>
+                <button class="increment" data-index="${index}">+</button>, 
+                Precio total: $${(
+                  parseFloat(item.price.replace("$", "")) * item.quantity
+                ).toFixed(2)}
+              `;
+
+              pricesList.appendChild(listItem);
+            });
+
+            // Añadir eventos a los botones
+            document.querySelectorAll(".increment").forEach((button) =>
+              button.addEventListener("click", (e) => {
+                const index = e.target.dataset.index;
+                cart[index].quantity += 1;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderCart();
+              })
+            );
+
+            document.querySelectorAll(".decrement").forEach((button) =>
+              button.addEventListener("click", (e) => {
+                const index = e.target.dataset.index;
+                if (cart[index].quantity > 1) {
+                  cart[index].quantity -= 1;
+                  localStorage.setItem("cart", JSON.stringify(cart));
+                  renderCart();
+                }
+              })
+            );
+          } else {
+            const emptyMessage = document.createElement("li");
+            emptyMessage.textContent = "El carrito está vacío.";
+            pricesList.appendChild(emptyMessage);
+          }
+        };
+
+        renderCart(); // Renderizar el carrito al cargar la página
       });
     </script>
   </body>
