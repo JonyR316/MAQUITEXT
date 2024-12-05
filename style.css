@@ -1573,6 +1573,44 @@ form.search button:hover {
   transition: var(--trans-color);
 }
 
+/* Botones cantidad carrito*/
+.botones {
+}
+
+.decrement {
+  width: fit-content;
+  padding: 0.5em;
+  border: 3px solid var(--border-color);
+  margin: 0 2em 2em 0;
+  border-radius: 60px;
+  box-shadow: 9px 3px 12px #000;
+  cursor: pointer;
+}
+.valor {
+  width: fit-content;
+  padding: 0.5em;
+  border: 3px solid var(--border-color);
+  margin: 0 2em 2em 0;
+  border-radius: 12px;
+  box-shadow: 9px 3px 12px #000;
+}
+.increment {
+  width: fit-content;
+  padding: 0.5em;
+  border: 3px solid var(--border-color);
+  margin: 0 2em 2em 0;
+  border-radius: 12px;
+  box-shadow: 9px 3px 12px #000;
+  cursor: pointer;
+}
+.precio-total {
+  text-align: left;
+  margin-top: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 3em;
+}
+
 /*-------------------------
  * 08. PAGE SINGLE        |
  * d. Product description |

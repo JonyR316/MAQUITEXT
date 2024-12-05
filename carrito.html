@@ -864,15 +864,18 @@
               const listItem = document.createElement("li");
 
               listItem.innerHTML = `
-                Producto: ${item.title}, 
-                Precio unitario: ${item.price}, 
-                Cantidad: 
-                <button class="decrement" data-index="${index}">-</button>
-                <span>${item.quantity}</span>
-                <button class="increment" data-index="${index}">+</button>, 
-                Precio total: $${(
-                  parseFloat(item.price.replace("$", "")) * item.quantity
-                ).toFixed(2)}
+                <div class="cart-item">
+                  <h3 class="title">${item.title}</h3>
+                  <p>Precio unitario: ${item.price}</p>
+                    <div class="botones">
+                      <button class="decrement" data-index="${index}">-</button>
+                      <span class="valor">${item.quantity}</span>
+                      <button class="increment" data-index="${index}">+</button>
+                      </div>
+                  <p class="precio-total"> $${(
+                    parseFloat(item.price.replace("$", "")) * item.quantity
+                  ).toFixed(2)}</p>
+                </div>
               `;
 
               pricesList.appendChild(listItem);
