@@ -224,12 +224,14 @@ document.querySelectorAll(".buy-button").forEach((button) => {
     const currentPriceElement = productElement.querySelector(".price .current"); // Precio unitario
     const quantityElement = productElement.querySelector("#quantity"); // Cantidad seleccionada
     const productTitleElement = document.querySelector("h1.title"); // Título del producto
+    const productImageElement = document.querySelector(".big-image img"); // Primera imagen del producto
     const productId = this.dataset.id; // ID único del producto
 
     if (
       currentPriceElement &&
       quantityElement &&
       productTitleElement &&
+      productImageElement &&
       productId
     ) {
       const price = parseFloat(
@@ -237,6 +239,14 @@ document.querySelectorAll(".buy-button").forEach((button) => {
       ); // Obtener el precio como número
       const quantity = parseInt(quantityElement.value.trim(), 10); // Obtener la cantidad como número
       const title = productTitleElement.textContent.trim(); // Obtener el título del producto
+      const imageUrl = productImageElement ? productImageElement.src : null; // Capturar la URL de la imagen
+
+      if (!imageUrl) {
+        console.error(
+          "No se pudo capturar la URL de la imagen. Verifica el selector."
+        );
+        return;
+      }
 
       // Validar que la cantidad sea válida
       if (isNaN(quantity) || quantity < 1) {
@@ -257,13 +267,14 @@ document.querySelectorAll(".buy-button").forEach((button) => {
       // Calcular el precio total del producto
       const totalPrice = price * quantity;
 
-      // Agregar el producto al carrito con título, cantidad, precio unitario y precio total
+      // Agregar el producto al carrito con imagen, título, cantidad y precios
       cart.push({
         id: productId,
         title: title,
         price: `$${price.toFixed(2)}`, // Guardar el precio unitario formateado
         quantity: quantity,
         totalPrice: `$${totalPrice.toFixed(2)}`, // Guardar el precio total formateado
+        imageUrl: imageUrl, // Guardar la URL de la imagen
       });
 
       // Guardar el carrito actualizado en localStorage

@@ -1610,6 +1610,41 @@ form.search button:hover {
   font-weight: bold;
   margin-bottom: 3em;
 }
+.cart-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.cart-item h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+.cart-item p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* Basurero */
+.delete {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete:hover {
+  color: darkred;
+  transform: scale(1.1);
+}
 
 /*-------------------------
  * 08. PAGE SINGLE        |
