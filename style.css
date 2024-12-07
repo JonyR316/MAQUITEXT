@@ -1649,11 +1649,97 @@ form.search button:hover {
 
 /* cart-product */
 .cart-product {
-  width: 500px;
-  height: 350px;
+  width: 650px;
+  height: 150px;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+/* Contenedor principal del producto */
+.cart-item {
+  display: flex;
+  flex-direction: row; /* Organiza los elementos en una fila */
+  align-items: center; /* Alinea verticalmente */
+  justify-content: space-between; /* Espacio entre elementos */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
   box-shadow: 9px 3px 12px #000;
+  margin-top: 15px;
+}
+
+/* Imagen del producto */
+.product-image {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 9px 3px 12px #000;
+}
+
+/* Información del producto */
+.product-info {
+  display: flex;
+  flex-direction: column; /* Organiza el título y el precio unitario en columnas */
+  align-items: flex-start; /* Alinea a la izquierda */
+  margin-left: 15px;
+  flex: 1; /* Ocupa el espacio disponible */
+}
+
+.product-info h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.product-info p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: gray;
+}
+
+/* Botones para cantidad */
+.botones {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.1px; /* Espaciado entre botones */
+}
+
+.botones button {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.valor {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Precio total */
+.precio-total {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 15px;
+}
+
+/* Botón de eliminación */
+.delete {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.delete:hover {
+  color: darkred;
+  transform: scale(1.1);
 }
 
 /*-------------------------
