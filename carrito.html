@@ -864,10 +864,11 @@
               const listItem = document.createElement("li");
 
               listItem.innerHTML = `
-          <div class="cart-item">
+          <div class=cart-product>
+          <div class="cart-item" style="9px 3px 12px #000;">
             <img src="${item.imageUrl}" alt="Imagen de ${
                 item.title
-              }" style="width: 100px; height: auto; margin-bottom: 10px;" />
+              }" style="width: 100px; height: auto; margin-bottom: 10px; box-shadow: 9px 3px 12px #000;" />
             <h3>${item.title}</h3>
             <p>Precio unitario: ${item.price}</p>
             <div class="botones">
@@ -881,6 +882,7 @@
             <button class="delete" data-index="${index}" title="Eliminar producto">
               🗑️
             </button>
+          </div>
           </div>
         `;
 

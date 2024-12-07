@@ -1615,6 +1615,7 @@ form.search button:hover {
   height: auto;
   border-radius: 5px;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 .cart-item {
   display: flex;
@@ -1644,6 +1645,15 @@ form.search button:hover {
 .delete:hover {
   color: darkred;
   transform: scale(1.1);
+}
+
+/* cart-product */
+.cart-product {
+  width: 500px;
+  height: 350px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 9px 3px 12px #000;
 }
 
 /*-------------------------
