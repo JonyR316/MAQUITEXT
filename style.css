@@ -1585,6 +1585,7 @@ form.search button:hover {
   border-radius: 60px;
   box-shadow: 9px 3px 12px #000;
   cursor: pointer;
+  background-color: white;
 }
 .valor {
   width: fit-content;
@@ -1593,6 +1594,7 @@ form.search button:hover {
   margin: 0 2em 2em 0;
   border-radius: 12px;
   box-shadow: 9px 3px 12px #000;
+  background-color: white;
 }
 .increment {
   width: fit-content;
@@ -1602,6 +1604,7 @@ form.search button:hover {
   border-radius: 12px;
   box-shadow: 9px 3px 12px #000;
   cursor: pointer;
+  background-color: white;
 }
 .precio-total {
   text-align: left;
@@ -1649,7 +1652,7 @@ form.search button:hover {
 
 /* cart-product */
 .cart-product {
-  width: 650px;
+  width: 850px;
   height: 150px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -1667,7 +1670,8 @@ form.search button:hover {
   border-radius: 5px;
   margin-bottom: 15px;
   box-shadow: 9px 3px 12px #000;
-  margin-top: 15px;
+  padding-left: 2em;
+  background-color: #ebeaea;
 }
 
 /* Imagen del producto */
@@ -1685,6 +1689,7 @@ form.search button:hover {
   align-items: flex-start; /* Alinea a la izquierda */
   margin-left: 15px;
   flex: 1; /* Ocupa el espacio disponible */
+  padding-left: 1em;
 }
 
 .product-info h3 {
@@ -1704,13 +1709,14 @@ form.search button:hover {
   display: flex;
   align-items: center;
   gap: 0.1px; /* Espaciado entre botones */
+  padding-left: 2em;
 }
 
 .botones button {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: white;
   cursor: pointer;
 }
 
@@ -1725,6 +1731,8 @@ form.search button:hover {
   font-weight: bold;
   text-align: center;
   margin-left: 15px;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /* Botón de eliminación */
@@ -1736,11 +1744,59 @@ form.search button:hover {
   cursor: pointer;
   margin-left: 15px;
   margin-bottom: 20px;
+  padding-right: 2em;
 }
 
 .delete:hover {
   color: darkred;
   transform: scale(1.1);
+}
+
+/* SUMARY*/
+#cart-content {
+  display: flex; /* Permite colocar los elementos en fila (horizontalmente) */
+  justify-content: space-between; /* Espacio entre la lista de productos y el resumen */
+  align-items: flex-start; /* Alinea los elementos al inicio vertical */
+  margin-top: 2em;
+}
+
+#product-prices {
+  width: 60%; /* Ajusta el ancho de la lista de productos */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#cart-summary {
+  width: 35%; /* Ancho del resumen */
+  margin-right: 2%; /* Margen a la derecha */
+  padding: 20px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde del cuadro */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo gris claro */
+  box-shadow: 9px 3px 12px #000;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+#cart-summary p {
+  margin: 8px 0; /* Espaciado entre párrafos */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: 500; /* Fuente más destacada */
+  display: flex; /* Alinea el texto y los valores en fila */
+  justify-content: space-between; /* Separa el texto del valor */
+  margin-bottom: 2em;
+}
+
+#cart-summary p span {
+  display: inline-block; /* Permite un mejor control del espacio */
+}
+
+#cart-summary p span:first-child {
+  text-align: left; /* Texto alineado a la izquierda */
+}
+
+#cart-summary p span:last-child {
+  text-align: right; /* Valores alineados a la derecha */
 }
 
 /*-------------------------

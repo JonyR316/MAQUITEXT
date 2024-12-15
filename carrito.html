@@ -616,6 +616,28 @@
             <ul id="product-prices">
               <!-- Precios cargados dinámicamente -->
             </ul>
+
+            <div id="cart-summary">
+              <p>
+                <span id="total-quantity"><b>0</b></span>
+                <span id="total-price"><b>$0.00</b></span>
+              </p>
+              <p>
+                <span><b>ENVIO:</b></span>
+                <span id="transport">Gratis</span>
+              </p>
+              <p>
+                <span><b>TOTAL INPUESTOS INCLUIDOS:</b></span>
+                <span id="tax">$0.00</span>
+              </p>
+              <p><span>Total:</span> <span id="grand-total">$0.00</span></p>
+              <p>
+                <span>Descuento del 12% a clientes que compran en línea:</span>
+              </p>
+              <p>
+                <span>Precio final:</span> <span id="final-price">$0.00</span>
+              </p>
+            </div>
           </div>
         </section>
       </main>
@@ -854,43 +876,47 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const pricesList = document.getElementById("product-prices"); // Contenedor donde se mostrarán los productos
+        const cartSummary = document.getElementById("cart-summary"); // Contenedor del resumen del carrito
         const cart = JSON.parse(localStorage.getItem("cart")) || []; // Recuperar carrito desde localStorage
 
         const renderCart = () => {
-          pricesList.innerHTML = ""; // Limpiar la lista para renderizar actualizaciones
+          pricesList.innerHTML = ""; // Limpiar productos
+          let totalQuantity = 0;
+          let totalPrice = 0;
 
           if (cart.length > 0) {
             cart.forEach((item, index) => {
-              const listItem = document.createElement("li");
+              totalQuantity += item.quantity;
+              totalPrice +=
+                parseFloat(item.price.replace("$", "")) * item.quantity;
 
+              const listItem = document.createElement("li");
               listItem.innerHTML = `
-          <div class=cart-product>
-          <div class="cart-item">
-          <img src="${item.imageUrl}" alt="Imagen de ${
+              <div class=cart-product>
+                <div class="cart-item">
+                  <img src="${item.imageUrl}" alt="Imagen de ${
                 item.title
               }" class="product-image" />
-          <div class="product-info">
-          <h3>${item.title}</h3>
-        <p>Precio unitario: ${item.price}</p>
-        </div>
-        <div class="botones">
-        <button class="decrement" data-index="${index}">-</button>
-        <span class="valor">${item.quantity}</span>
-        <button class="increment" data-index="${index}">+</button>
-        </div>
-        <p class="precio-total">$${(
-          parseFloat(item.price.replace("$", "")) * item.quantity
-        ).toFixed(2)}</p>
-        <button class="delete" data-index="${index}" title="Eliminar producto">🗑️</button>
-        </div>
-
-          </div>
-        `;
-
+                  <div class="product-info">
+                    <h3>${item.title}</h3>
+                    <p>Precio unitario: ${item.price}</p>
+                  </div>
+                  <div class="botones">
+                    <button class="decrement" data-index="${index}">-</button>
+                    <span class="valor">${item.quantity}</span>
+                    <button class="increment" data-index="${index}">+</button>
+                  </div>
+                  <p class="precio-total">$${(
+                    parseFloat(item.price.replace("$", "")) * item.quantity
+                  ).toFixed(2)}</p>
+                  <button class="delete" data-index="${index}" title="Eliminar producto">🗑️</button>
+                </div>
+                </div>
+              `;
               pricesList.appendChild(listItem);
             });
 
-            // Añadir eventos a los botones de incremento, decremento y eliminación
+            // Añadir eventos a botones de incrementar, decrementar y eliminar
             document.querySelectorAll(".increment").forEach((button) =>
               button.addEventListener("click", (e) => {
                 const index = e.target.dataset.index;
@@ -914,7 +940,7 @@
             document.querySelectorAll(".delete").forEach((button) =>
               button.addEventListener("click", (e) => {
                 const index = e.target.dataset.index;
-                cart.splice(index, 1); // Elimina el producto del carrito
+                cart.splice(index, 1);
                 localStorage.setItem("cart", JSON.stringify(cart));
                 renderCart();
               })
@@ -922,6 +948,23 @@
           } else {
             pricesList.innerHTML = "<li>El carrito está vacío.</li>";
           }
+
+          // Actualizar resumen del carrito
+          const tax = totalPrice * 0.12; // IVA del 12%
+          const grandTotal = totalPrice + tax; // Total con IVA
+          const finalPrice = totalPrice; // Precio final es el precio total sumado de los productos
+
+          document.getElementById("total-quantity").textContent = totalQuantity;
+          document.getElementById(
+            "total-price"
+          ).textContent = `$${totalPrice.toFixed(2)}`;
+          document.getElementById("tax").textContent = `$${tax.toFixed(2)}`;
+          document.getElementById(
+            "grand-total"
+          ).textContent = `$${grandTotal.toFixed(2)}`;
+          document.getElementById(
+            "final-price"
+          ).textContent = `$${finalPrice.toFixed(2)}`;
         };
 
         renderCart(); // Renderizar el carrito al cargar la página
