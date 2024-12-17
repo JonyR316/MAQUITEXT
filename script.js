@@ -254,6 +254,9 @@ document.querySelectorAll(".buy-button").forEach((button) => {
         return;
       }
 
+      const productUrl = window.location.href; // Capturar la URL actual
+      console.log("URL capturada:", productUrl); // Verificar URL
+
       // Recuperar el carrito desde localStorage
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -275,6 +278,7 @@ document.querySelectorAll(".buy-button").forEach((button) => {
         quantity: quantity,
         totalPrice: `$${totalPrice.toFixed(2)}`, // Guardar el precio total formateado
         imageUrl: imageUrl, // Guardar la URL de la imagen
+        url: productUrl, // Guardar la URL actual
       });
 
       // Guardar el carrito actualizado en localStorage

@@ -900,10 +900,13 @@
             <img src="${item.imageUrl}" alt="Imagen de ${
                 item.title
               }" class="product-image" />
-            <div class="product-info">
+             <!-- Título con enlace dinámico -->
+              <div class="product-info">
+              <a href="${item.url}" target="_blank" title="Ver producto">
               <h3>${item.title}</h3>
+              </a>
               <p>Precio unitario: ${item.price}</p>
-            </div>
+              </div>
             <div class="botones">
               <button class="decrement" data-index="${index}">-</button>
               <span class="valor">${item.quantity}</span>
