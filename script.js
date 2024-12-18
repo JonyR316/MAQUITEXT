@@ -341,3 +341,87 @@ document.querySelectorAll(".qty-control").forEach((control) => {
     quantityInput.value = currentValue + 1;
   });
 });
+
+// BUSCADOR
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+  const searchResults = document.createElement("div");
+  searchResults.className = "search-results";
+  searchInput.parentElement.appendChild(searchResults);
+
+  const productPaths = [
+    //sigma
+    "/maquinas/domesticas/Sigma/individuales/sigma1/sigma1.html",
+    "/maquinas/domesticas/Sigma/individuales/sigma2/sigma2.html",
+    "/maquinas/domesticas/Sigma/individuales/sigma3/sigma3.html",
+    //offertas
+    "/ofertas/individuales/oferta1/offer1.html",
+  ];
+
+  let products = [];
+
+  // Cargar los títulos dinámicamente
+  const loadProducts = async () => {
+    const promises = productPaths.map(async (path) => {
+      try {
+        const response = await fetch(path);
+        const text = await response.text();
+        const doc = new DOMParser().parseFromString(text, "text/html");
+        const titleElement = doc.querySelector("h1.title");
+        if (titleElement) {
+          return { name: titleElement.textContent.trim(), url: path };
+        }
+      } catch (error) {
+        console.error(`Error al cargar ${path}:`, error);
+        return null;
+      }
+    });
+
+    const results = await Promise.all(promises);
+    products = results.filter((product) => product !== null);
+  };
+
+  // Mostrar resultados en el buscador
+  const showResults = (query) => {
+    searchResults.innerHTML = "";
+    if (!query) {
+      searchResults.style.display = "none";
+      return;
+    }
+
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (filteredProducts.length === 0) {
+      searchResults.innerHTML = "<p>No se encontraron resultados.</p>";
+      searchResults.style.display = "block";
+      return;
+    }
+
+    filteredProducts.forEach((product) => {
+      const link = document.createElement("a");
+      link.href = product.url;
+      link.textContent = product.name;
+      link.className = "search-result-item";
+      searchResults.appendChild(link);
+    });
+
+    searchResults.style.display = "block";
+  };
+
+  // Eventos del buscador
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim();
+    showResults(query);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!searchResults.contains(e.target) && e.target !== searchInput) {
+      searchResults.style.display = "none";
+    }
+  });
+
+  loadProducts(); // Cargar los productos al inicio
+});

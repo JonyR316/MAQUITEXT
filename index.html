@@ -586,13 +586,20 @@
               </div>
               <div class="right">
                 <div class="search-box">
-                  <form action="" class="search">
+                  <form action="javascript:void(0)" class="search">
                     <span class="icon-large"
                       ><i class="ri-search-line"></i
                     ></span>
-                    <input type="search" placeholder="NOMBRE PRODUCTO" />
+                    <input
+                      type="search"
+                      id="search-input"
+                      placeholder="NOMBRE PRODUCTO"
+                      autocomplete="off"
+                    />
                     <button type="submit">BUSCAR</button>
                   </form>
+                  <!-- Contenedor para mostrar los resultados -->
+                  <div id="search-results"></div>
                 </div>
               </div>
             </div>
