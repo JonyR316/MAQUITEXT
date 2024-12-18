@@ -929,6 +929,7 @@
                 cart[index].quantity += 1;
                 localStorage.setItem("cart", JSON.stringify(cart));
                 renderCart();
+                updateCartIcon(); // Actualizar ícono del carrito y total
               })
             );
 
@@ -939,6 +940,7 @@
                   cart[index].quantity -= 1;
                   localStorage.setItem("cart", JSON.stringify(cart));
                   renderCart();
+                  updateCartIcon(); // Actualizar ícono del carrito y total
                 }
               })
             );
@@ -949,11 +951,13 @@
                 cart.splice(index, 1);
                 localStorage.setItem("cart", JSON.stringify(cart));
                 renderCart();
+                updateCartIcon(); // Actualizar ícono del carrito y total
               })
             );
           } else {
             pricesList.innerHTML = "<li>El carrito está vacío.</li>";
           }
+          updateCartIcon(); // Asegurar actualización después del renderizado
 
           // Calcular IVA y actualizar resumen del carrito
           const tax = totalPrice * 0.12; // IVA del 12%
@@ -969,6 +973,32 @@
             "final-price"
           ).textContent = `$${totalPrice.toFixed(2)}`;
         };
+
+        // Función para actualizar cantidad y total en el ícono del carrito
+        function updateCartIcon() {
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const totalItems = cart.reduce(
+            (total, item) => total + item.quantity,
+            0
+          );
+          const totalPrice = cart.reduce(
+            (sum, item) =>
+              sum + parseFloat(item.price.replace("$", "")) * item.quantity,
+            0
+          );
+
+          // Actualizar cantidad de productos en el ícono del carrito
+          const cartNumberElement = document.querySelector(".cart-number");
+          if (cartNumberElement) {
+            cartNumberElement.textContent = totalItems;
+          }
+
+          // Actualizar precio total en el ícono del carrito
+          const cartTotalElement = document.querySelector(".cart-total");
+          if (cartTotalElement) {
+            cartTotalElement.textContent = `$${totalPrice.toFixed(2)}`;
+          }
+        }
 
         renderCart(); // Renderizar el carrito al cargar la página
       });
