@@ -1801,29 +1801,33 @@ form.search button:hover {
 
 /* BUSCADOR */
 
+/* Contenedor de resultados */
 .search-results {
-  position: absolute;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  max-height: 200px;
-  overflow-y: auto;
-  width: 300px;
-  z-index: 1000;
-  display: none;
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  position: absolute; /* Posición relativa al contenedor del buscador */
+  width: 100%; /* Ocupa todo el ancho del input */
+  max-height: 200px; /* Altura máxima para la lista */
+  overflow-y: auto; /* Scroll si excede el tamaño */
+  border: 1px solid #444; /* Borde para distinguir el contenedor */
+  z-index: 10; /* Asegura que se muestre encima */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
+/* Elementos de la lista de resultados */
 .search-result-item {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
+  display: block; /* Cada resultado ocupa toda la línea */
+  padding: 10px; /* Espaciado interno */
+  text-decoration: none; /* Eliminar subrayado de los enlaces */
+  color: inherit; /* Hereda el color blanco del contenedor */
+  transition: background-color 0.3s, color 0.3s; /* Animación suave */
 }
 
+/* Efecto hover (al pasar el mouse) */
 .search-result-item:hover {
-  background-color: #f0f0f0;
+  background-color: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+  cursor: pointer; /* Cambia el cursor a una mano */
 }
 
 /*-------------------------
