@@ -50,7 +50,12 @@
               </a>
               <div class="left flexitem">
                 <div class="logo">
-                  <a href="/"><span class="circle"></span>.MAQUITEXT</a>
+                  <a href="/"
+                    ><img
+                      src="/assets/img/logo/logo.jpg"
+                      alt="MAQUITEXT Logo"
+                      class="logo-image"
+                  /></a>
                 </div>
                 <nav class="mobile-hide">
                   <ul class="flexitem second-links">
@@ -636,8 +641,12 @@
               </p>
 
               <center>
-                <button class="btn-add" type="button" data-id="carrito">
-                  <a href="/caja.html">PASAR POR LA CAJA</a>
+                <button
+                  id="checkout-button"
+                  class="primary-button"
+                  style="background-color: blue"
+                >
+                  <a href="caja.html"> PASAR POR LA CAJA </a>
                 </button>
               </center>
             </div>
@@ -954,9 +963,14 @@
                 updateCartIcon(); // Actualizar ícono del carrito y total
               })
             );
-          } else {
-            pricesList.innerHTML = "<li>El carrito está vacío.</li>";
           }
+          if (cart.length === 0) {
+            pricesList.innerHTML = `
+            <center><h2>¡Tu carrito está vacío!</h2></center>
+            <img src="/assets/img/carrito/carrito-vacio.png" alt="Carrito vacío" class="empty-cart-image" />
+            `;
+          }
+
           updateCartIcon(); // Asegurar actualización después del renderizado
 
           // Calcular IVA y actualizar resumen del carrito

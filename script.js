@@ -462,3 +462,21 @@ document.querySelectorAll(".buy-button").forEach((button) => {
     });
   });
 });
+
+document
+  .getElementById("checkout-button")
+  .addEventListener("click", function (event) {
+    // Recupera los productos del carrito desde localStorage
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Verifica si hay al menos un producto en el carrito
+    if (cartItems.length === 0) {
+      // Si está vacío, muestra un mensaje al usuario
+      console.log(
+        "El carrito está vacío. Agrega al menos un producto para continuar."
+      );
+
+      // Evita que el botón realice la redirección
+      event.preventDefault();
+    }
+  });

@@ -1855,6 +1855,17 @@ form.search button:hover {
   color: #000;
 }
 
+/* imagen carrito vacio */
+.empty-cart-image {
+  display: block;
+  margin: 20px auto; /* Centra la imagen horizontalmente */
+  width: 100%; /* Imagen ocupa todo el ancho disponible */
+  max-width: 500px; /* Tamaño máximo para mantener un diseño coherente */
+  height: auto; /* Mantiene las proporciones */
+  border-radius: 8px; /* Opcional: Esquinas redondeadas */
+  box-shadow: 9px 3px 12px #000;
+}
+
 /*-------------------------
  * 08. PAGE SINGLE        |
  * d. Product description |
