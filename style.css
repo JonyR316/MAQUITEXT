@@ -1866,6 +1866,13 @@ form.search button:hover {
   box-shadow: 9px 3px 12px #000;
 }
 
+.logo-image {
+  max-width: auto; /* Ajusta el tamaño según lo que necesites */
+  height: auto; /* Mantiene las proporciones */
+  display: block; /* Para que la imagen se muestre correctamente */
+  margin: 0 auto; /* Centra la imagen si es necesario */
+}
+
 /*-------------------------
  * 08. PAGE SINGLE        |
  * d. Product description |
