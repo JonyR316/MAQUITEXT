@@ -1830,6 +1830,31 @@ form.search button:hover {
   cursor: pointer; /* Cambia el cursor a una mano */
 }
 
+/* Animación de carrito */
+@keyframes move-to-cart {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 3;
+  }
+  100% {
+    transform: translate(
+        calc(var(--target-x) - var(--start-x)),
+        calc(var(--target-y) - var(--start-y))
+      )
+      scale(2);
+    opacity: 0;
+  }
+}
+
+.moving-cart {
+  position: fixed;
+  z-index: 9999;
+  animation: move-to-cart 2s ease-in-out forwards;
+  pointer-events: none;
+  font-size: 24px;
+  color: #000;
+}
+
 /*-------------------------
  * 08. PAGE SINGLE        |
  * d. Product description |

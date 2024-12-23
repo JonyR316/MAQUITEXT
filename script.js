@@ -286,7 +286,7 @@ document.querySelectorAll(".buy-button").forEach((button) => {
       // Verificar si el producto ya está en el carrito
       const existingProduct = cart.find((item) => item.id === productId);
       if (existingProduct) {
-        alert("Este producto ya está en el carrito.");
+        console.log("Este producto ya está en el carrito.");
         return;
       }
 
@@ -310,7 +310,7 @@ document.querySelectorAll(".buy-button").forEach((button) => {
       // Actualizar el ícono del carrito
       updateCartIcon();
 
-      alert("Producto agregado al carrito");
+      aconsole.log("Producto agregado al carrito");
     } else {
       console.error(
         "Error al agregar el producto al carrito. Verifica los datos."
@@ -424,4 +424,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loadProducts(); // Cargar los productos al inicio
+});
+
+document.querySelectorAll(".buy-button").forEach((button) => {
+  button.addEventListener("click", function () {
+    // Seleccionamos el ícono del carrito en el header
+    const topCartIcon = document.querySelector(".iscart .icon-large i");
+
+    // Seleccionamos el ícono del carrito junto al botón
+    const buttonCartIcon = this.querySelector("i");
+
+    // Obtenemos las posiciones inicial y final del ícono
+    const startRect = buttonCartIcon.getBoundingClientRect();
+    const targetRect = topCartIcon.getBoundingClientRect();
+
+    // Creamos un clon del ícono
+    const cloneIcon = buttonCartIcon.cloneNode(true);
+    document.body.appendChild(cloneIcon);
+
+    // Estilo inicial del clon
+    cloneIcon.style.position = "fixed";
+    cloneIcon.style.left = `${startRect.left}px`;
+    cloneIcon.style.top = `${startRect.top}px`;
+    cloneIcon.style.fontSize = "24px";
+    cloneIcon.style.color = "#000";
+    cloneIcon.classList.add("moving-cart");
+
+    // Variables de la animación
+    cloneIcon.style.setProperty("--start-x", `${startRect.left}px`);
+    cloneIcon.style.setProperty("--start-y", `${startRect.top}px`);
+    cloneIcon.style.setProperty("--target-x", `${targetRect.left}px`);
+    cloneIcon.style.setProperty("--target-y", `${targetRect.top}px`);
+
+    // Eliminamos el clon al terminar la animación
+    cloneIcon.addEventListener("animationend", () => {
+      cloneIcon.remove();
+    });
+  });
 });
