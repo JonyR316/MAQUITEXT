@@ -1761,9 +1761,6 @@ form.search button:hover {
 }
 
 #product-prices {
-  width: 60%; /* Ajusta el ancho de la lista de productos */
-  border-radius: 5px;
-  margin-bottom: 10px;
 }
 
 #cart-summary {
@@ -2034,6 +2031,41 @@ form label {
 form .primary-button {
   box-shadow: 9px 3px 12px #000;
   background-color: #0144fc;
+}
+
+/* Formulario */
+
+#customer-info {
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centrar en la página */
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#customer-info h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /*--------------------------------

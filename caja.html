@@ -615,14 +615,175 @@
 
       <main>
         <section id="cart-section">
-          <center><h1>CAJA</h1></center>
-          <div id="cart-content">
+          <center><h1 style="margin-bottom: 1em">CAJA</h1></center>
+
+          <main>
+            <section id="customer-info">
+              <h2>Datos del Cliente</h2>
+              <form id="customer-form">
+                <div class="form-group">
+                  <label for="first-name">Nombres</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    placeholder="Ingrese sus nombres"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Apellidos</label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    placeholder="Ingrese sus apellidos"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Correo Electrónico</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Ingrese su correo electrónico"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Teléfono</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Ingrese su número de teléfono"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="province">Provincia</label>
+                  <select id="province" required>
+                    <option value="">Seleccione una provincia</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="city">Ciudad</label>
+                  <select id="city" required>
+                    <option value="">Seleccione una ciudad</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="address">Dirección</label>
+                  <input
+                    type="text"
+                    id="address"
+                    placeholder="Ingrese su dirección"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="house-number"
+                    >Número de domicilio (opcional)</label
+                  >
+                  <input
+                    type="text"
+                    id="house-number"
+                    placeholder="Ingrese el número de su domicilio"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="reference"
+                    >Referencia de domicilio (opcional)</label
+                  >
+                  <input
+                    type="text"
+                    id="reference"
+                    placeholder="Ingrese una referencia de su domicilio"
+                  />
+                </div>
+              </form>
+            </section>
+
+            <section id="product-summary">
+              <center><h2>Resumen de Productos</h2></center>
+              <!-- Resto del contenido para productos y precios -->
+            </section>
+          </main>
+
+          <script>
+            // Datos de provincias y ciudades
+            const provinces = {
+              Azuay: ["Cuenca", "Gualaceo", "Sigsig"],
+              Guayas: ["Guayaquil", "Daule", "Milagro"],
+              Pichincha: ["Quito", "Cayambe", "Rumiñahui"],
+              Manabí: ["Portoviejo", "Manta", "Jipijapa"],
+              // Agrega más provincias y ciudades según sea necesario
+            };
+
+            // Elementos del DOM
+            const provinceSelect = document.getElementById("province");
+            const citySelect = document.getElementById("city");
+
+            // Poblar provincias
+            Object.keys(provinces).forEach((province) => {
+              const option = document.createElement("option");
+              option.value = province;
+              option.textContent = province;
+              provinceSelect.appendChild(option);
+            });
+
+            // Actualizar ciudades dinámicamente
+            provinceSelect.addEventListener("change", () => {
+              const selectedProvince = provinceSelect.value;
+              citySelect.innerHTML =
+                '<option value="">Seleccione una ciudad</option>'; // Limpiar ciudades
+
+              if (selectedProvince && provinces[selectedProvince]) {
+                provinces[selectedProvince].forEach((city) => {
+                  const option = document.createElement("option");
+                  option.value = city;
+                  option.textContent = city;
+                  citySelect.appendChild(option);
+                });
+              }
+            });
+          </script>
+
+          <div
+            id="cart-content"
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center; /* Alinea los elementos horizontalmente al centro */
+              gap: 10px; /* Espaciado entre los elementos */
+              padding: 20px; /* Espaciado interno */
+              text-align: center;
+            "
+          >
             <!-- Aquí se visualizarán los precios -->
-            <ul id="product-prices">
+            <ul
+              id="product-prices"
+              style="
+                display: inline-block;
+                text-align: center;
+                list-style: none;
+              "
+            >
               <!-- Precios cargados dinámicamente -->
             </ul>
 
-            <div id="cart-summary">
+            <div
+              id="cart-summary"
+              style="
+                width: 50%; /* Ancho del resumen */
+                margin-right: 2%; /* Margen a la derecha */
+                padding: 20px; /* Espaciado interno */
+                border: 1px solid #ccc; /* Borde del cuadro */
+                border-radius: 8px; /* Bordes redondeados */
+                background-color: #f9f9f9; /* Fondo gris claro */
+                box-shadow: 9px 3px 12px #000;
+                padding-left: 2em;
+                padding-right: 2em;
+                align-content: center;
+              "
+            >
               <p>
                 <span id="total-quantity">0</span>
                 <span id="total-price">$0.00</span>
@@ -811,9 +972,8 @@
               // Mostrar cada producto en el carrito
               const listItem = document.createElement("li");
               listItem.innerHTML = `
-              <div class="cart-product" style="display: block; justify-content: space-between; width: 700px; height: 150px; border-radius: 5px;
-              margin-bottom: 10px;
-              padding-left: 2em;">
+              <div class="cart-product" style="display: flex; justify-content: space-between; width: 700px; height: 150px; border-radius: 5px;
+              margin-bottom: 10px;">
           <div class="cart-item">
             <img src="${item.imageUrl}" alt="Imagen de ${
                 item.title
