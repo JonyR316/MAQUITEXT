@@ -614,11 +614,15 @@
       </header>
 
       <main>
-        <section id="cart-section">
-          <center><h1 style="margin-bottom: 1em">CAJA</h1></center>
-
-          <section id="customer-info">
-            <h2>Datos del Cliente</h2>
+        <section
+          id="cart-section style"
+          style="display: flex; gap: 20px; padding-left: 1em"
+        >
+          <section
+            id="customer-info"
+            style="flex: 1; max-width: 50%; box-shadow: 9px 3px 12px #000"
+          >
+            <h2>DATOS DEL CLIENTE</h2>
             <form id="customer-form">
               <div class="form-group">
                 <label for="first-name">Nombres</label>
@@ -697,20 +701,224 @@
               </div>
             </form>
           </section>
-
           <section id="product-summary">
-            <center><h2>Resumen de Productos</h2></center>
-            <!-- Resto del contenido para productos y precios -->
+            <center>
+              <h2 style="margin-bottom: -1em">RESUMEN DE PRODUCTOS</h2>
+            </center>
+            <div
+              id="cart-content"
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Alinea los elementos horizontalmente al centro */
+                gap: 10px; /* Espaciado entre los elementos */
+                padding: 20px; /* Espaciado interno */
+                text-align: center;
+              "
+            >
+              <!-- Aquí se visualizarán los precios -->
+              <ul
+                id="product-prices"
+                style="
+                  display: inline-block;
+                  text-align: center;
+                  list-style: none;
+                "
+              >
+                <!-- Precios cargados dinámicamente -->
+              </ul>
+
+              <div
+                id="cart-summary"
+                style="
+                  width: 90%; /* Ancho del resumen */
+                  margin-right: 2%; /* Margen a la derecha */
+                  padding: 20px; /* Espaciado interno */
+                  border: 1px solid #ccc; /* Borde del cuadro */
+                  border-radius: 8px; /* Bordes redondeados */
+                  background-color: #f9f9f9; /* Fondo gris claro */
+                  box-shadow: 9px 3px 12px #000;
+                  padding-left: 2em;
+                  padding-right: 2em;
+                  align-content: center;
+                "
+              >
+                <p>
+                  <span id="total-quantity">0</span>
+                  <span id="total-price">$0.00</span>
+                </p>
+                <p>
+                  <span><b>ENVIO:</b></span>
+                  <span id="transport">Gratis</span>
+                </p>
+                <p>
+                  <span><b>IVA INCLUIDO:</b></span>
+                  <span id="tax">$0.00</span>
+                </p>
+                <p>
+                  <span><b>PRECIO FINAL:</b></span>
+                  <span id="final-price">$0.00</span>
+                </p>
+              </div>
+            </div>
           </section>
 
           <script>
             // Datos de provincias y ciudades
             const provinces = {
-              Azuay: ["Cuenca", "Gualaceo", "Sigsig"],
-              Guayas: ["Guayaquil", "Daule", "Milagro"],
-              Pichincha: ["Quito", "Cayambe", "Rumiñahui"],
-              Manabí: ["Portoviejo", "Manta", "Jipijapa"],
-              // Agrega más provincias y ciudades según sea necesario
+              Azuay: [
+                "Cuenca",
+                "Gualaceo",
+                "Sigsig",
+                "Paute",
+                "Girón",
+                "Chordeleg",
+              ],
+              Guayas: [
+                "Guayaquil",
+                "Daule",
+                "Milagro",
+                "Samborondón",
+                "Playas",
+                "Durán",
+              ],
+              Pichincha: [
+                "Quito",
+                "Cayambe",
+                "Rumiñahui",
+                "Mejía",
+                "Pedro Moncayo",
+                "Pedro Vicente Maldonado",
+              ],
+              Manabí: [
+                "Portoviejo",
+                "Manta",
+                "Jipijapa",
+                "Bahía de Caráquez",
+                "Chone",
+                "Montecristi",
+              ],
+              "El Oro": [
+                "Machala",
+                "Pasaje",
+                "Santa Rosa",
+                "Huaquillas",
+                "Arenillas",
+                "Zaruma",
+              ],
+              Loja: [
+                "Loja",
+                "Catamayo",
+                "Macará",
+                "Vilcabamba",
+                "Puyango",
+                "Saraguro",
+              ],
+              Esmeraldas: [
+                "Esmeraldas",
+                "Atacames",
+                "Quinindé",
+                "San Lorenzo",
+                "Muisne",
+                "La Concordia",
+              ],
+              Tungurahua: [
+                "Ambato",
+                "Baños",
+                "Pelileo",
+                "Cevallos",
+                "Píllaro",
+                "Quero",
+              ],
+              Chimborazo: [
+                "Riobamba",
+                "Guano",
+                "Alausí",
+                "Chambo",
+                "Colta",
+                "Cumandá",
+              ],
+              Imbabura: [
+                "Ibarra",
+                "Otavalo",
+                "Cotacachi",
+                "Antonio Ante",
+                "Pimampiro",
+                "San Miguel de Urcuquí",
+              ],
+              "Santa Elena": [
+                "Santa Elena",
+                "Salinas",
+                "La Libertad",
+                "Manglaralto",
+              ],
+              Cotopaxi: [
+                "Latacunga",
+                "Salcedo",
+                "Pujilí",
+                "Sigchos",
+                "La Maná",
+                "Saquisilí",
+              ],
+              Carchi: [
+                "Tulcán",
+                "San Gabriel",
+                "Montúfar",
+                "Mira",
+                "Bolívar",
+                "Espejo",
+              ],
+              Bolívar: [
+                "Guaranda",
+                "Chimbo",
+                "San Miguel",
+                "Caluma",
+                "Echeandía",
+                "Las Naves",
+              ],
+              Sucumbíos: [
+                "Lago Agrio",
+                "Shushufindi",
+                "Cuyabeno",
+                "Putumayo",
+                "Cascales",
+                "Gonzalo Pizarro",
+              ],
+              Napo: [
+                "Tena",
+                "Archidona",
+                "El Chaco",
+                "Quijos",
+                "Carlos Julio Arosemena Tola",
+              ],
+              Pastaza: ["Puyo", "Mera", "Santa Clara", "Arajuno"],
+              "Zamora Chinchipe": [
+                "Zamora",
+                "Yantzaza",
+                "El Pangui",
+                "Centinela del Cóndor",
+                "Paquisha",
+                "Chinchipe",
+              ],
+              Orellana: [
+                "Francisco de Orellana (Coca)",
+                "Loreto",
+                "Joya de los Sachas",
+                "Aguarico",
+              ],
+              "Morona Santiago": [
+                "Macas",
+                "Gualaquiza",
+                "Santiago",
+                "Sucúa",
+                "Palora",
+                "Logroño",
+              ],
+              Galápagos: [
+                "Puerto Ayora",
+                "Puerto Baquerizo Moreno",
+                "Puerto Villamil",
+              ],
             };
 
             // Elementos del DOM
@@ -741,63 +949,6 @@
               }
             });
           </script>
-
-          <div
-            id="cart-content"
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: center; /* Alinea los elementos horizontalmente al centro */
-              gap: 10px; /* Espaciado entre los elementos */
-              padding: 20px; /* Espaciado interno */
-              text-align: center;
-            "
-          >
-            <!-- Aquí se visualizarán los precios -->
-            <ul
-              id="product-prices"
-              style="
-                display: inline-block;
-                text-align: center;
-                list-style: none;
-              "
-            >
-              <!-- Precios cargados dinámicamente -->
-            </ul>
-
-            <div
-              id="cart-summary"
-              style="
-                width: 50%; /* Ancho del resumen */
-                margin-right: 2%; /* Margen a la derecha */
-                padding: 20px; /* Espaciado interno */
-                border: 1px solid #ccc; /* Borde del cuadro */
-                border-radius: 8px; /* Bordes redondeados */
-                background-color: #f9f9f9; /* Fondo gris claro */
-                box-shadow: 9px 3px 12px #000;
-                padding-left: 2em;
-                padding-right: 2em;
-                align-content: center;
-              "
-            >
-              <p>
-                <span id="total-quantity">0</span>
-                <span id="total-price">$0.00</span>
-              </p>
-              <p>
-                <span><b>ENVIO:</b></span>
-                <span id="transport">Gratis</span>
-              </p>
-              <p>
-                <span><b>IVA INCLUIDO:</b></span>
-                <span id="tax">$0.00</span>
-              </p>
-              <p>
-                <span><b>PRECIO FINAL:</b></span>
-                <span id="final-price">$0.00</span>
-              </p>
-            </div>
-          </div>
         </section>
       </main>
       <!-- main -->
@@ -968,7 +1119,7 @@
               // Mostrar cada producto en el carrito
               const listItem = document.createElement("li");
               listItem.innerHTML = `
-              <div class="cart-productc" style=" align-content: center;">
+              <div class="cart-productc" style=" align-content: center; margin-bottom: 1em;">
           <div class="cart-item">
             <img src="${item.imageUrl}" alt="Imagen de ${
                 item.title
