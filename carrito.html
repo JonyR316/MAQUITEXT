@@ -968,9 +968,16 @@
           }
           if (cart.length === 0) {
             pricesList.innerHTML = `
-            <center><h2>¡Tu carrito está vacío!</h2></center>
-            <img src="/assets/img/carrito/carrito-vacio.png" alt="Carrito vacío" class="empty-cart-image" />
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100vw; margin: 0; padding: 0; ">
+            <h2 style="text-align: center; margin-bottom: 20px; padding: 1em 1em 1em 1em; border-radius: 15px; box-shadow: 9px 3px 12px #000"">¡Tu carrito está vacío!</h2>
+            <img src="/assets/img/carrito/carrito-vacio.png" alt="Carrito vacío" style="max-width: 100%; height: auto;  border-radius: 15px; box-shadow: 9px 3px 12px #000" />
+            </div>
             `;
+            // Ocultar el resumen del carrito
+            document.getElementById("cart-summary").style.display = "none";
+          } else {
+            // Mostrar el resumen del carrito si hay productos
+            document.getElementById("cart-summary").style.display = "block";
           }
 
           updateCartIcon(); // Asegurar actualización después del renderizado
