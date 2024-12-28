@@ -715,22 +715,24 @@
                 />
               </div>
             </form>
-                        <!-- Botón Confirmar Pedido -->
+                
+            <!-- Botón Confirmar Pedido -->
             <div class="form-group">
-               <button 
-                 id="confirmar-pedido" 
-                 type="button" 
-                 style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-                 CONFIRMAR PEDIDO
-               </button>
-             </div>
+              <button 
+                id="confirmar-pedido" 
+                type="button" 
+                style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                CONFIRMAR PEDIDO
+              </button>
+            </div>
 
-             <!-- Contenedor para el mensaje de confirmación -->
-             <div 
-               id="mensaje-confirmacion" 
-               style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;">
-               <strong>¡Éxito!</strong> Tu pedido se ha realizado con éxito.
-             </div>
+            <!-- Contenedor para el mensaje de confirmación -->
+            <div 
+              id="mensaje-confirmacion" 
+              style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;">
+              <strong>¡Éxito!</strong> Tu pedido se ha realizado con éxito.
+            </div>
+
            </form>
           </section>
           <section id="product-summary">
@@ -1013,6 +1015,94 @@
               this.style.cursor = "not-allowed";
             });
           </script>
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const form = document.getElementById("customer-form");
+              const requiredFields = form.querySelectorAll("input[required], select[required]");
+              const mensajeValidacion = document.getElementById("mensaje-validacion");
+              const botonConfirmar = document.getElementById("confirmar-pedido");
+          
+              // Deshabilitar el botón inicialmente
+              botonConfirmar.disabled = true;
+          
+              // Validar si todos los campos están llenos
+              const validateForm = () => {
+                let hasEmptyFields = false;
+          
+                requiredFields.forEach((field) => {
+                  if (!field.value.trim()) {
+                    hasEmptyFields = true;
+                  }
+                });
+          
+                // Habilitar o deshabilitar el botón basado en la validación
+                botonConfirmar.disabled = hasEmptyFields;
+                botonConfirmar.style.cursor = hasEmptyFields ? "not-allowed" : "pointer";
+              };
+          
+              // Validar los campos dinámicamente al cambiar su valor
+              requiredFields.forEach((field) => {
+                field.addEventListener("input", () => {
+                  // Quitar el borde rojo al llenar un campo
+                  if (field.value.trim()) {
+                    field.style.border = ""; // Quitar el resaltado
+                  }
+                  validateForm(); // Validar si el formulario está completo
+                });
+              });
+          
+              // Evento al hacer clic en el botón "Confirmar Pedido"
+              botonConfirmar.addEventListener("click", function () {
+                let hasEmptyFields = false;
+          
+                // Validar campos obligatorios y resaltar los vacíos
+                requiredFields.forEach((field) => {
+                  if (!field.value.trim()) {
+                    hasEmptyFields = true;
+                    field.style.border = "2px solid red"; // Resaltar el campo vacío
+                  } else {
+                    field.style.border = ""; // Quitar el resaltado si el campo está lleno
+                  }
+                });
+          
+                // Mostrar mensaje si hay campos vacíos
+                if (hasEmptyFields) {
+                  mensajeValidacion.style.display = "block";
+                  mensajeValidacion.style.backgroundColor = "#f8d7da"; // Fondo rojo claro
+                  mensajeValidacion.style.color = "#721c24"; // Texto rojo oscuro
+                  mensajeValidacion.style.border = "1px solid #f5c6cb"; // Borde rojo claro
+                  mensajeValidacion.textContent = "Por favor, complete todos los campos obligatorios para continuar.";
+                  return;
+                }
+          
+                // Si todos los campos están completos, mostrar mensaje de éxito
+                mensajeValidacion.style.display = "block";
+                mensajeValidacion.style.backgroundColor = "#d4edda"; // Fondo verde claro
+                mensajeValidacion.style.color = "#155724"; // Texto verde oscuro
+                mensajeValidacion.style.border = "1px solid #c3e6cb"; // Borde verde claro
+                mensajeValidacion.textContent = "¡Éxito! Tu pedido se ha realizado con éxito.";
+          
+                // Deshabilitar el botón después de la confirmación
+                setTimeout(() => {
+                  botonConfirmar.disabled = true;
+                  botonConfirmar.style.cursor = "not-allowed";
+                }, 2000);
+              });
+          
+              // Validar el formulario al cargar la página
+              validateForm();
+            });
+          </script>
+          
+          
+          
+          <!-- Script para manejar el evento del botón -->
+          <script>
+            document.getElementById("confirmar-pedido").addEventListener("click", function () {
+              // Código de validación aquí
+            });
+          </script>
+          
         </section>
       </main>
       <!-- main -->
