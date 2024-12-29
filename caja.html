@@ -619,8 +619,17 @@
           style="display: flex; gap: 20px; padding-left: 1em"
         >
           <section
-            id="customer-info"
-            style="flex: 1; max-width: 50%; box-shadow: 9px 3px 12px #000"
+          id="customer-info"
+          style="
+            flex: 1;
+            max-width: 50%;
+            box-shadow: 9px 3px 12px #000;
+            height: 1035px; /* Altura mínima fija */
+            overflow-y: auto; /* Desplazamiento vertical si es necesario */
+            box-sizing: border-box;
+            padding: 20px; /* Espaciado interno */
+            overflow-y: auto; /* Desplazamiento interno si el contenido es mayor */
+          "
           >
             <h2>DATOS DEL CLIENTE</h2>
             <form id="customer-form">
@@ -721,7 +730,7 @@
               <button 
                 id="confirmar-pedido" 
                 type="button" 
-                style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 9px 3px 12px #000; margin-top: 1em; padding: 1em 2em 1em 2em;">
                 CONFIRMAR PEDIDO
               </button>
             </div>
@@ -729,8 +738,8 @@
             <!-- Contenedor para el mensaje de confirmación -->
             <div 
               id="mensaje-confirmacion" 
-              style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px;">
-              <strong>¡Éxito!</strong> Tu pedido se ha realizado con éxito.
+              style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; box-shadow: 9px 3px 12px #000;">
+              <center><strong>¡EXITO!</strong> TU PEDIDO SE HA REALIZADO CON EXITO.</center>
             </div>
 
            </form>
