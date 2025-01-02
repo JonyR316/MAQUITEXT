@@ -13,6 +13,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
   </head>
   <body>
     <div id="page" class="site page-single">
@@ -631,10 +636,11 @@
             overflow-y: auto; /* Desplazamiento interno si el contenido es mayor */
           "
           >
-            <h2>DATOS DEL CLIENTE</h2>
+            <h2 style="color: #015707;"> <i class="fa-sharp fa-solid fa-user-pen" style="margin-right: 0.7; color: #015707;"></i>
+              DATOS DEL CLIENTE</h2>
             <form id="customer-form">
               <div class="form-group">
-                <label for="first-name">Nombres</label>
+                <label for="first-name"><i class="fa-solid fa-file-signature" style="margin-right: 0.5em;"></i>Nombres</label>
                 <input
                   type="text"
                   id="first-name"
@@ -643,7 +649,7 @@
                 />
               </div>
               <div class="form-group">
-                <label for="last-name">Apellidos</label>
+                <label for="last-name"><i class="fa-solid fa-file-signature" style="margin-right: 0.5em;"></i>Apellidos</label>
                 <input
                   type="text"
                   id="last-name"
@@ -652,7 +658,7 @@
                 />
               </div>
               <div class="form-group">
-                <label for="email">Correo Electrónico</label>
+                <label for="email"><i class="fa-solid fa-envelope" style="margin-right: 0.5em;"></i>Correo Electrónico</label>
                 <input
                   type="email"
                   id="email"
@@ -661,7 +667,7 @@
                 />
               </div>
               <div class="form-group">
-                <label for="telefono">Teléfono:</label>
+                <label for="telefono"><i class="fa-solid fa-phone-volume" style="margin-right: 0.5em;"></i>Teléfono</label>
                 <input
                   type="text"
                   id="telefono"
@@ -673,7 +679,7 @@
                 />
               </div>
               <div class="form-group">
-                <label for="celular">Celular:</label>
+                <label for="celular"><i class="fa-solid fa-mobile-screen" style="margin-right: 0.5em;"></i>Celular</label>
                 <input
                   type="text"
                   id="celular"
@@ -685,19 +691,19 @@
                 />
               </div>
               <div class="form-group">
-                <label for="province">Provincia</label>
+                <label for="province"><i class="fa-solid fa-earth-americas" style="margin-right: 0.5em;"></i>Provincia</label>
                 <select id="province" required>
                   <option value="">Seleccione una provincia</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="city">Ciudad</label>
+                <label for="city"><i class="fa-solid fa-city" style="margin-right: 0.5em;"></i>Ciudad</label>
                 <select id="city" required>
                   <option value="">Seleccione una ciudad</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="address">Dirección</label>
+                <label for="address"><i class="fa-solid fa-location-dot" style="margin-right: 0.5em;"></i>Dirección</label>
                 <input
                   type="text"
                   id="address"
@@ -706,7 +712,7 @@
                 />
               </div>
               <div class="form-group">
-                <label for="house-number">Número de domicilio (opcional)</label>
+                <label for="house-number"><i class="fa-solid fa-house-chimney-window" style="margin-right: 0.5em;"></i>Número de domicilio <span style="color: red;">(opcional)</span></label>
                 <input
                   type="text"
                   id="house-number"
@@ -715,7 +721,7 @@
               </div>
               <div class="form-group">
                 <label for="reference"
-                  >Referencia de domicilio (opcional)</label
+                  > <i class="fa-solid fa-street-view" style="margin-right: 0.5em;"></i>Referencia de domicilio <span style="color: red;">(opcional)</span></label
                 >
                 <input
                   type="text"
@@ -730,7 +736,7 @@
               <button 
                 id="confirmar-pedido" 
                 type="button" 
-                style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 9px 3px 12px #000; margin-top: 1em; padding: 1em 2em 1em 2em;">
+                style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 9px 3px 12px #000; margin-top: 0.5em; padding: 1em 2em 1em 2em;">
                 CONFIRMAR PEDIDO
               </button>
             </div>
@@ -738,7 +744,7 @@
             <!-- Contenedor para el mensaje de confirmación -->
             <div 
               id="mensaje-confirmacion" 
-              style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; box-shadow: 9px 3px 12px #000;">
+              style="display: none; margin-top: 20px; padding: 10px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; box-shadow: 9px 3px 12px #000;">
               <center><strong>¡EXITO!</strong> TU PEDIDO SE HA REALIZADO CON EXITO.</center>
             </div>
 
@@ -746,7 +752,7 @@
           </section>
           <section id="product-summary">
             <center>
-              <h2 style="margin-bottom: -1em">RESUMEN DE PRODUCTOS</h2>
+              <h2 style="margin-bottom: -1em; color: #070bec; "><i class="fa-solid fa-cart-shopping" style="color: #070bec; margin-right: 0.5em;"></i>RESUMEN DE PRODUCTOS</h2>
             </center>
             <div
               id="cart-content"

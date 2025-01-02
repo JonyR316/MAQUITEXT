@@ -13,6 +13,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <div id="page" class="site page-single">
@@ -615,7 +619,23 @@
 
       <main>
         <section id="cart-section">
-          <center><h1>CARRITO DE COMPRAS</h1></center>
+          <center>
+            <h1 style="color: #08240a">
+              <i
+                class="fa-solid fa-cart-plus"
+                style="margin-right: 0.5em; color: #070bec"
+              ></i
+              >CARRITO DE COMPRAS
+              <i
+                class="fa-solid fa-cart-plus"
+                style="
+                  margin-left: 0.5em;
+                  color: #070bec;
+                  transform: scaleX(-1);
+                "
+              ></i>
+            </h1>
+          </center>
           <div id="cart-content">
             <!-- Aquí se visualizarán los precios -->
             <ul id="product-prices">
@@ -647,6 +667,10 @@
                     class="primary-button"
                     style="background-color: blue; cursor: pointer"
                   >
+                    <i
+                      class="fa-regular fa-credit-card"
+                      style="margin-right: 0.5em"
+                    ></i>
                     PASAR POR LA CAJA
                   </button>
                 </a>

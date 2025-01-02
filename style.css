@@ -1895,13 +1895,18 @@ form.search button:hover {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
+  color: #042b55;
+  margin-left: 1em;
+}
+.form-group i {
+  color: #070bec;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #35ec07;
   border-radius: 5px;
 }
 
