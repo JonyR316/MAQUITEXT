@@ -1053,13 +1053,14 @@ form.search button:hover {
   padding: 1.5em;
 }
 .banners .product-categories .image {
-  background-color: white;
+  background-color: #dedfe7;
   max-width: 150px;
   max-height: 250px;
   margin-right: 20px;
   overflow: hidden; /* Oculta cualquier exceso de la imagen */
   box-shadow: 9px 6px 15px #000;
   border-radius: 12px;
+  border: 1px solid #000;
 }
 
 .banners .product-categories .image img {
