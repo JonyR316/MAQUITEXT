@@ -339,9 +339,9 @@ body {
   position: absolute;
   height: 16px;
   font-size: var(--font-smaller);
-  padding: 3px;
+  padding: 1.5px;
   text-align: center;
-  line-height: 10px;
+  line-height: 13px;
   color: var(--white-color);
 }
 nav .fly-item {
@@ -361,8 +361,8 @@ nav .fly-item {
 }
 .header-nav .right .fly-item {
   top: 0;
-  right: 16px;
-  width: 16px;
+  right: 8px;
+  width: 20px;
   background-color: var(--secondary-dark-color);
   border-radius: var(--percent50);
 }
