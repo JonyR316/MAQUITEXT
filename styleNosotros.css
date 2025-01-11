@@ -49,7 +49,6 @@
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  margin-bottom: 3em;
 }
 .carrousel .list-img {
   height: 100%;
@@ -111,15 +110,30 @@
 .bg-box .bg:nth-child(4) {
   background: linear-gradient(360deg, #823043, #fac0cb);
 }
+.bg-box .bg:nth-child(5) {
+  background: linear-gradient(360deg, #1d1ae9, #514eeb);
+}
+.bg-box .bg:nth-child(6) {
+  background: linear-gradient(360deg, #9d1ae9, #bb72e6);
+}
+.bg-box .bg:nth-child(7) {
+  background: linear-gradient(360deg, #e97e1a, #ecb27c);
+}
 
 .bg-box .bg:nth-child(2),
 .bg-box .bg:nth-child(3),
-.bg-box .bg:nth-child(4) {
+.bg-box .bg:nth-child(4),
+.bg-box .bg:nth-child(5),
+.bg-box .bg:nth-child(6),
+.bg-box .bg:nth-child(7) {
   clip-path: circle(0% at 50% 50%);
 }
 
 .bg-box .bg:nth-child(2).active,
 .bg-box .bg:nth-child(3).active,
-.bg-box .bg:nth-child(4).active {
+.bg-box .bg:nth-child(4).active,
+.bg-box .bg:nth-child(5).active,
+.bg-box .bg:nth-child(6).active,
+.bg-box .bg:nth-child(7).active {
   clip-path: circle(75% at 50% 50%);
 }
