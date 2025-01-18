@@ -193,15 +193,17 @@ h4 {
 .secondary-button,
 .light-button {
   font-size: var(--font-small);
-  padding: 0.9em 2em;
+  padding: 0.5em 1em;
   height: auto;
   width: fit-content;
   border-radius: 2em;
   transition: var(--trans-background-color);
 }
 .primary-button {
-  background-color: var(--primary-color);
+  background-color: rgb(66, 66, 226);
   color: var(--white-color);
+  cursor: pointer;
+  box-shadow: 12px 6px 15px #000;
 }
 .primary-button:hover {
   background-color: var(--dark-color);
@@ -653,7 +655,6 @@ form.search button:hover {
   align-items: center;
 }
 .swiper-slide img {
-  border-radius: 12px;
   transition: transform 0.3s ease;
 }
 .swiper-slide .primary-button {
@@ -1569,6 +1570,7 @@ form.search button:hover {
 .products .actions input {
   width: 50px;
   text-align: center;
+  background-color: transparent;
 }
 .products .qty-control button::before {
   background-color: transparent;
@@ -2538,11 +2540,14 @@ form .primary-button {
     border: 2px solid var(--border-color);
     border-top: 0;
     border-bottom: 0;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 12px 6px 15px #000;
   }
   .dpt-menu > ul > li > a {
     font-weight: var(--fw5);
     padding: 0 1.5em;
     border-bottom: 1px solid var(--border-color);
+    border-radius: 0 0 15px 15px;
   }
 
   .dpt-menu .has-child > ul,
