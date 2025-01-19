@@ -608,6 +608,7 @@ form.search button:hover {
 .slider .item {
   position: relative;
   height: 474px;
+  border-radius: 20px;
 }
 .slider .item::before {
   content: "";
@@ -2608,8 +2609,11 @@ form .primary-button {
 
   /* slider */
   .slider > div > .wrapper {
-    width: calc(100% - (300px + 2em));
-    margin-left: auto;
+    width: calc(119% - (460px + 2em));
+    margin-left: 330px;
+    margin-bottom: 2em;
+    box-shadow: 12px 6px 15px #000;
+    background-color: transparent;
   }
 
   /* products */
