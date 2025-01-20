@@ -99,25 +99,25 @@
   transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .bg-box .bg:nth-child(1) {
-  background: linear-gradient(360deg, #408e20, #9acd31);
+  background: linear-gradient(360deg, #414141, #d2e2f7);
 }
 .bg-box .bg:nth-child(2) {
-  background: linear-gradient(360deg, #550802, #f40401);
+  background: linear-gradient(360deg, #414141, #d2e2f7);
 }
 .bg-box .bg:nth-child(3) {
-  background: linear-gradient(360deg, #696901, #ffff03);
+  background: linear-gradient(360deg, #414141, #d2e2f7);
 }
 .bg-box .bg:nth-child(4) {
-  background: linear-gradient(360deg, #823043, #fac0cb);
+  background: linear-gradient(360deg, #414141, #d2e2f7);
 }
 .bg-box .bg:nth-child(5) {
-  background: linear-gradient(360deg, #1d1ae9, #514eeb);
+  background: linear-gradient(360deg, #414141, #d2e2f7);
 }
 .bg-box .bg:nth-child(6) {
-  background: linear-gradient(360deg, #9d1ae9, #bb72e6);
+  background: linear-gradient(360deg, #414141, #d2e2f7);
 }
 .bg-box .bg:nth-child(7) {
-  background: linear-gradient(360deg, #e97e1a, #ecb27c);
+  background: linear-gradient(360deg, #414141, #d2e2f7);
 }
 
 .bg-box .bg:nth-child(2),
